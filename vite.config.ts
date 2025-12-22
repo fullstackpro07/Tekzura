@@ -15,7 +15,7 @@ export default defineConfig({
   build: {
     target: 'esnext',
     outDir: 'build',        // Vercel output directory
-    sourcemap: false,
+    sourcemap: false,       // Set to true if you need source maps for debugging
     minify: 'esbuild',
     rollupOptions: {
       output: {
@@ -25,7 +25,8 @@ export default defineConfig({
   },
 
   server: {
-    port: 3000,
+    // Vercel does not use the port setting, but it's useful locally
+    port: 3000,            
     open: true
   },
 
