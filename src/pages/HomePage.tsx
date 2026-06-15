@@ -5,6 +5,8 @@ import { CaseStudyCard, SectionHeading } from '../components/site/PageElements';
 import Seo from '../components/site/Seo';
 import { CapabilityExplorer, ProcessStory, Reveal, ServiceMatcher } from '../components/site/InteractiveSections';
 import { CommonQuestions, FounderSpotlight } from '../components/site/TeamSections';
+import TestimonialsCarousel from '../components/site/TestimonialsCarousel';
+import PortfolioStats from '../components/site/PortfolioStats';
 
 export default function HomePage() {
   const schema = {
@@ -74,6 +76,8 @@ export default function HomePage() {
         </div>
       </section>
 
+      <PortfolioStats />
+
       <CapabilityExplorer variant="dashboard" />
 
       <ProcessStory />
@@ -92,21 +96,16 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section section-ink">
+      <section className="section section-ink testimonial-section" id="testimonials">
         <div className="container testimonial-layout">
-          <SectionHeading
-            eyebrow="Client experience"
-            title="A collaborative partner, not a black box"
-            description="We keep communication direct and decisions visible throughout the engagement."
-          />
-          <div className="testimonial-grid">
-            {testimonials.map((item) => (
-              <blockquote key={item.quote}>
-                <p>“{item.quote}”</p>
-                <cite>{item.attribution}</cite>
-              </blockquote>
-            ))}
+          <div className="testimonial-intro">
+            <SectionHeading
+              eyebrow="Client experience"
+              title="Trusted by teams across industries and borders"
+              description="Direct feedback from founders, operators, and product leaders who partnered with Tekzura."
+            />
           </div>
+          <TestimonialsCarousel items={testimonials} />
         </div>
       </section>
       <FounderSpotlight />

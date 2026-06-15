@@ -1,8 +1,36 @@
-import { ArrowRight, CheckCircle2, UsersRound } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Linkedin, UsersRound } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { team } from '../../content/site';
+import { team, type TeamMember } from '../../content/site';
 import { SectionHeading } from './PageElements';
 import { Reveal } from './InteractiveSections';
+
+const teamGroups: NonNullable<TeamMember['group']>[] = [
+  'Leadership',
+  'Engineering & Product',
+  'Growth & Creative',
+  'Operations & Client Success',
+];
+
+function TeamPortrait({ member }: { member: TeamMember }) {
+  if (member.image) {
+    return (
+      <img
+        src={member.image}
+        alt={`${member.name}, ${member.role} at Tekzura`}
+        width={member.width}
+        height={member.height}
+        loading="lazy"
+      />
+    );
+  }
+
+  const icon = member.gender === 'female' ? '/team/profile-female.svg' : '/team/profile-male.svg';
+  return (
+    <div className={`team-photo-fallback is-${member.gender || 'male'}`} aria-label={`${member.name} profile placeholder`}>
+      <img src={icon} alt="" width="720" height="840" loading="lazy" aria-hidden="true" />
+    </div>
+  );
+}
 
 export function TeamShowcase() {
   return (
@@ -13,28 +41,48 @@ export function TeamShowcase() {
           title="Specialists who work as one delivery team"
           description="Strategy, engineering, automation, growth, content, and support stay connected from the first conversation through launch."
         />
-        <div className="team-gallery">
-          {team.map((member, index) => (
-            <Reveal key={member.name} delay={Math.min(index * 60, 240)}>
-              <article className="team-profile">
-                <div className="team-photo">
-                  <img
-                    src={member.image}
-                    alt={`${member.name}, ${member.role} at Tekzura`}
-                    width={member.width}
-                    height={member.height}
-                    loading="lazy"
-                  />
-                  <span>{String(index + 1).padStart(2, '0')}</span>
+        <div className="team-groups">
+          {teamGroups.map((group) => {
+            const members = team.filter((member) => member.group === group);
+            if (!members.length) return null;
+
+            return (
+              <section className="team-group" key={group} aria-labelledby={`team-group-${group.replace(/\W+/g, '-').toLowerCase()}`}>
+                <div className="team-group-heading">
+                  <h3 id={`team-group-${group.replace(/\W+/g, '-').toLowerCase()}`}>{group}</h3>
+                  <span>{members.length} {members.length === 1 ? 'member' : 'members'}</span>
                 </div>
-                <div className="team-profile-copy">
-                  <p className="team-role">{member.role}</p>
-                  <h3>{member.name}</h3>
-                  <p>{member.bio}</p>
+                <div className="team-gallery">
+                  {members.map((member, index) => (
+                    <Reveal key={member.name} delay={Math.min(index * 60, 240)}>
+                      <article className="team-profile">
+                        <div className="team-photo">
+                          <TeamPortrait member={member} />
+
+                        </div>
+                        <div className="team-profile-copy">
+                          <p className="team-role">{member.role}</p>
+                          <h3>{member.name}</h3>
+                          <p>{member.bio}</p>
+                          {member.linkedinUrl && (
+                            <a
+                              className="team-linkedin"
+                              href={member.linkedinUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              aria-label={`View ${member.name} on LinkedIn`}
+                            >
+                              <Linkedin aria-hidden="true" /> View LinkedIn
+                            </a>
+                          )}
+                        </div>
+                      </article>
+                    </Reveal>
+                  ))}
                 </div>
-              </article>
-            </Reveal>
-          ))}
+              </section>
+            );
+          })}
         </div>
       </div>
     </section>
