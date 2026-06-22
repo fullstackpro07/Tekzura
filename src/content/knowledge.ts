@@ -45,17 +45,20 @@ function build(): string {
     sections.push(`- ${c.title} (${c.industry}). Challenge: ${c.challenge} Solution: ${c.solution} Outcome: ${c.outcome}`);
   }
 
-  const leadership = team.filter((m) => m.group === 'Leadership').map((m) => `${m.name} (${m.role})`);
   const roleCounts = team.reduce<Record<string, number>>((acc, m) => {
     const key = m.group || 'Team';
     acc[key] = (acc[key] || 0) + 1;
     return acc;
   }, {});
-  sections.push(
-    `TEAM: ${team.length} people. Leadership: ${leadership.join(', ')}. Breakdown: ${Object.entries(roleCounts)
-      .map(([group, n]) => `${group}: ${n}`)
-      .join('; ')}. The team spans full-stack engineering, SaaS, AI/ML, design, digital marketing, and operations.`,
-  );
+  sections.push('TEAM (answer team questions from this roster; full profiles on /about):');
+  sections.push(`Team size: ${team.length}. Groups: ${Object.entries(roleCounts)
+    .map(([group, n]) => `${group} (${n})`)
+    .join(', ')}.`);
+  for (const member of team) {
+    const group = member.group || 'Team';
+    const bio = member.bio ? ` Bio: ${member.bio}` : '';
+    sections.push(`- ${member.name} — ${member.role} (${group}).${bio}`);
+  }
 
   const countries = Array.from(new Set(testimonials.map((t) => t.country))).join(', ');
   sections.push(

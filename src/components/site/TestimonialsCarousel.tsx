@@ -1,8 +1,31 @@
 import { useEffect, useRef, useState } from 'react';
-import { ChevronLeft, ChevronRight, CirclePause, CirclePlay, Quote, UserRound } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Quote, UserRound } from 'lucide-react';
+import BH from 'country-flag-icons/react/3x2/BH';
+import CA from 'country-flag-icons/react/3x2/CA';
+import GB from 'country-flag-icons/react/3x2/GB';
+import NL from 'country-flag-icons/react/3x2/NL';
+import NZ from 'country-flag-icons/react/3x2/NZ';
+import US from 'country-flag-icons/react/3x2/US';
 import type { Testimonial } from '../../content/site';
 
 const AUTO_ADVANCE_MS = 4000;
+
+const countryFlagComponents = {
+  Bahrain: BH,
+  USA: US,
+  'United States': US,
+  'United Kingdom': GB,
+  UK: GB,
+  Canada: CA,
+  'New Zealand': NZ,
+  Netherlands: NL,
+} as const;
+
+function CountryFlag({ country }: { country: string }) {
+  const Flag = countryFlagComponents[country as keyof typeof countryFlagComponents];
+  if (!Flag) return null;
+  return <Flag aria-hidden="true" />;
+}
 
 export default function TestimonialsCarousel({ items }: { items: Testimonial[] }) {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -123,9 +146,13 @@ export default function TestimonialsCarousel({ items }: { items: Testimonial[] }
                 )}
               </div>
               <div className="testimonial-card-person">
-                <cite>{item.name}</cite>
+                <div className="testimonial-person-name">
+                  <span className="testimonial-country-flag" title={item.country} aria-hidden="true">
+                    <CountryFlag country={item.country} />
+                  </span>
+                  <cite>{item.name}</cite>
+                </div>
                 <span>{item.role}</span>
-                <small>{item.country}</small>
               </div>
               <blockquote>
                 <p>{item.quote}</p>

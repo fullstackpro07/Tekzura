@@ -202,14 +202,25 @@ export default function Chatbot() {
         }),
       });
       const data = (await res.json().catch(() => null)) as { reply?: string; error?: string } | null;
-      if (!res.ok || !data?.reply) throw new Error(data?.error || 'No reply');
+      if (!res.ok || !data?.reply) throw new Error(data?.error || `Chat request failed (${res.status})`);
       setMessages((prev) => [...prev, { role: 'assistant', content: data.reply as string }]);
-    } catch {
-      setError('The assistant is unavailable right now. Leave your details and we will follow up.');
-      setShowLead(true);
+    } catch (err) {
+      const reason = err instanceof Error ? err.message : '';
+      if (/not configured|GEMINI_API_KEY/i.test(reason)) {
+        setError('AI chat is not configured on the server yet (missing GEMINI_API_KEY). Use Request a callback below, or add the key in Vercel and redeploy.');
+      } else if (reason) {
+        setError(`${reason} Try again, or use Request a callback below.`);
+      } else {
+        setError('The assistant is unavailable right now. Try again, or use Request a callback below.');
+      }
     } finally {
       setSending(false);
     }
+  }
+
+  function closeLeadForm() {
+    setShowLead(false);
+    setLeadError('');
   }
 
   async function handleLeadSubmit(e: FormEvent) {
@@ -363,9 +374,14 @@ export default function Chatbot() {
                 value={leadEmail} onChange={(e) => setLeadEmail(e.target.value)}
                 aria-invalid={!!leadError} />
               {leadError && <span className="chat-lead-error" role="alert">{leadError}</span>}
-              <button type="submit" className="chat-lead-submit" disabled={leadSending}>
-                {leadSending ? <><Loader2 className="chat-spin" aria-hidden="true" /> Sending…</> : 'Send Details'}
-              </button>
+              <div className="chat-lead-actions">
+                <button type="button" className="chat-lead-cancel" onClick={closeLeadForm} disabled={leadSending}>
+                  Cancel
+                </button>
+                <button type="submit" className="chat-lead-submit" disabled={leadSending}>
+                  {leadSending ? <><Loader2 className="chat-spin" aria-hidden="true" /> Sending…</> : 'Send Details'}
+                </button>
+              </div>
             </form>
           )}
         </div>
