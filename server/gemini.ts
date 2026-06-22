@@ -10,7 +10,7 @@ export interface ChatMessage {
 export const MAX_MESSAGES = 20;
 export const MAX_CHARS = 4000;
 export const MAX_CONTEXT_CHARS = 24000;
-export const DEFAULT_MODEL = 'gemini-2.0-flash';
+export const DEFAULT_MODEL = 'gemini-flash-latest';
 
 const RETRYABLE_GEMINI_STATUSES = new Set([429, 503]);
 const MAX_GEMINI_ATTEMPTS = 3;
