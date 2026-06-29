@@ -1,5 +1,6 @@
 import { lazy, Suspense } from 'react';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import Analytics from './components/site/Analytics';
 import SiteShell from './components/site/SiteShell';
 
 const HomePage = lazy(() => import('./pages/HomePage'));
@@ -36,6 +37,7 @@ function PageLoader() {
 export default function App() {
   return (
     <BrowserRouter>
+      <Analytics />
       <Suspense fallback={<PageLoader />}>
         <Routes>
           <Route element={<SiteShell />}>

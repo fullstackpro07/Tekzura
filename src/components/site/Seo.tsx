@@ -26,7 +26,7 @@ function normalizePath(path: string) {
 export default function Seo({ title, description, path, schema, noIndex = false }: SeoProps) {
   useEffect(() => {
     const normalizedPath = normalizePath(path);
-    const fullTitle = title === siteConfig.name ? title : `${title} | ${siteConfig.name}`;
+    const fullTitle = title.includes('|') ? title : title === siteConfig.name ? title : `${title} | ${siteConfig.name}`;
     const canonicalUrl = `${siteConfig.url}${normalizedPath}`;
 
     document.title = fullTitle;

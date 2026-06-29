@@ -1,5 +1,6 @@
 import { supabase, type LeadInsert } from './supabase';
 import { siteConfig } from '../content/site';
+import { trackContactFormSubmission } from './analytics';
 
 export interface LeadFields {
   name: string;
@@ -128,7 +129,9 @@ export async function submitLead(fields: LeadFields, source: LeadSource): Promis
 
   // If Web3Forms is configured, email delivery is required. Supabase storage
   // alone should not show a success state because the user expects an email.
-  return { ok: web3FormsAccessKey ? web3Succeeded : supabaseSucceeded, usedFallback: false };
+  const ok = web3FormsAccessKey ? web3Succeeded : supabaseSucceeded;
+  if (ok) trackContactFormSubmission(source);
+  return { ok, usedFallback: false };
 }
 
 export interface PackageQuoteFields {

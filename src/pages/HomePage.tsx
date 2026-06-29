@@ -1,5 +1,6 @@
 import { ArrowRight, CalendarDays, CheckCircle2, MoveDown } from 'lucide-react';
 import { siteConfig, team, testimonials } from '../content/site';
+import { buildHomeSchema, homePageDescription, homePageH1, homePageTitle } from '../content/homeSchema';
 import { SectionHeading } from '../components/site/PageElements';
 import Seo from '../components/site/Seo';
 import { CapabilityExplorer } from '../components/site/InteractiveSections';
@@ -11,26 +12,16 @@ import ProductStudioFramework from '../components/site/ProductStudioFramework';
 import InvestorSection from '../components/site/InvestorSection';
 
 export default function HomePage() {
-  const schema = {
-    '@context': 'https://schema.org',
-    '@type': 'Organization',
-    name: siteConfig.name,
-    email: siteConfig.email,
-    telephone: siteConfig.phone,
-    address: siteConfig.address,
-    url: siteConfig.url,
-  };
-
   return (
     <>
-      <Seo title="Tekzura" description={siteConfig.description} path="/" schema={schema} />
+      <Seo title={homePageTitle} description={homePageDescription} path="/" schema={buildHomeSchema()} />
       <section className="home-hero immersive-hero">
         <img className="immersive-hero-image" src="/tech-studio-hero.jpg" alt="" width="1536" height="1024" fetchPriority="high" />
         <div className="immersive-overlay" aria-hidden="true" />
         <div className="container home-hero-grid">
           <div className="hero-copy">
 
-            <h1>Your Trusted Partner for Development and Growth.</h1>
+            <h1>{homePageH1}</h1>
             <p className="lead">
               Tekzura transforms ideas into launch-ready assets with strategy, engineering, and marketing under one roof.
             </p>

@@ -1,5 +1,6 @@
 import { ArrowRight, CheckCircle2, Linkedin, UsersRound } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { homeFaqs } from '../../content/homeSchema';
 import { team, type TeamMember } from '../../content/site';
 import { SectionHeading } from './PageElements';
 import { Reveal } from './InteractiveSections';
@@ -181,25 +182,6 @@ export function FounderSpotlight() {
   );
 }
 
-const faqs = [
-  {
-    question: 'How quickly can a project start?',
-    answer: 'After a focused discovery call, we confirm the scope, delivery team, milestones, and earliest practical start date.',
-  },
-  {
-    question: 'Can Tekzura work with our existing team and systems?',
-    answer: 'Yes. We can own a defined workstream or collaborate with internal product, marketing, and operations teams using your existing tools.',
-  },
-  {
-    question: 'How do you keep delivery transparent?',
-    answer: 'You receive visible priorities, reviewable milestones, regular progress updates, and clear decisions before major implementation work moves forward.',
-  },
-  {
-    question: 'What happens after launch?',
-    answer: 'We provide handover guidance and can continue through maintenance, optimization, campaign support, or the next prioritized product phase.',
-  },
-];
-
 export function CommonQuestions() {
   return (
     <section className="section faq-section">
@@ -218,7 +200,7 @@ export function CommonQuestions() {
           </ul>
         </div>
         <div className="faq-list">
-          {faqs.map((item, index) => (
+          {homeFaqs.map((item, index) => (
             <details key={item.question} open={index === 0}>
               <summary><span>{item.question}</span><i aria-hidden="true" /></summary>
               <p>{item.answer}</p>
