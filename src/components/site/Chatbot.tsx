@@ -113,9 +113,10 @@ const suggestionCards = [
 const mobileChatQuery = '(max-width: 640px)';
 
 function shouldOpenCallback(status: number, reason: string, fallbackToLead?: boolean) {
+  if (/not configured/i.test(reason)) return false;
   if (fallbackToLead) return true;
   if (status === 429 || status === 503) return true;
-  return /rate.?limit|quota|high demand|unavailable|busy|not configured|assistant is unavailable/i.test(reason);
+  return /rate.?limit|quota|high demand|unavailable|busy|assistant is unavailable/i.test(reason);
 }
 
 export default function Chatbot() {
@@ -228,6 +229,11 @@ export default function Chatbot() {
         const reason = data?.error || (contentType.includes('text/html')
           ? 'Chat service is not reachable on this deployment.'
           : `Chat request failed (${res.status})`);
+
+        if (/not configured/i.test(reason)) {
+          setError('AI chat is unavailable on this deployment. Please use Request a callback below or contact us directly.');
+          return;
+        }
 
         if (shouldOpenCallback(res.status, reason, data?.fallbackToLead)) {
           openCallbackFallback();
