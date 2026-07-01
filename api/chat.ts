@@ -17,7 +17,7 @@ export const config = { runtime: 'edge' };
 function readAllowedOrigins() {
   return (process.env.ALLOWED_ORIGINS || '')
     .split(',')
-    .map((value) => value.trim())
+    .map((value: string) => value.trim())
     .filter(Boolean);
 }
 
