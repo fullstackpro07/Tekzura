@@ -23,7 +23,7 @@ export const homeFaqs = [
   },
 ];
 
-export const homePageTitle = 'caldeforge | Full-Stack Development & AI Growth Studio';
+export const homePageTitle = 'caldeforge |  Where strategy meets execution & ideas become assets.';
 export const homePageDescription =
   'caldeforge is a full-stack development and AI growth studio building websites, apps, automation, and marketing systems that turn ideas into scalable products.';
 export const homePageH1 = 'Where strategy meets execution — and ideas become assets.';
