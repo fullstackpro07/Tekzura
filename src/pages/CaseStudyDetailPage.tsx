@@ -97,7 +97,7 @@ export default function CaseStudyDetailPage() {
             </div>
             <div className="case-study-sidebar-card">
               <span>Interested in similar work?</span>
-              <p>Talk with Tekzura about a project in {service?.shortTitle.toLowerCase() || 'this space'}.</p>
+              <p>Talk with caldeforge about a project in {service?.shortTitle.toLowerCase() || 'this space'}.</p>
               <Link className="button button-primary" to="/get-started">
                 Start a Project <ArrowRight aria-hidden="true" />
               </Link>
@@ -112,7 +112,7 @@ export default function CaseStudyDetailPage() {
       <ConversionCTA
         eyebrow="Apply the thinking"
         title="Ready to turn insight into execution?"
-        description="If this case study sparked a product, automation, or growth idea, Tekzura can help validate it and build the next useful version."
+        description="If this case study sparked a product, automation, or growth idea, caldeforge can help validate it and build the next useful version."
         bullets={['Idea validation', 'Execution plan', 'Build support']}
       />
     </>

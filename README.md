@@ -1,6 +1,6 @@
-# Tekzura — Main Website
+# caldeforge — Main Website
 
-Premium digital agency marketing site for **Tekzura**. Built with React, TypeScript, and Vite.
+Premium digital agency marketing site for **caldeforge**. Built with React, TypeScript, and Vite.
 
 Design reference: [Figma — Premium Digital Agency Website](https://www.figma.com/design/3GxfAXC5YzWZwh46HTXzn1/Premium-Digital-Agency-Website)
 

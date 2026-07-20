@@ -1,15 +1,15 @@
-# Tekzura Lead Capture Backend
+# caldeforge Lead Capture Backend
 
 The Get Started form (`/get-started`) uses a lean, no-server lead architecture:
 
-- **Web3Forms** sends email notifications to Tekzura.
+- **Web3Forms** sends email notifications to caldeforge.
 - **Supabase** stores each lead in `public.leads` as a lightweight CRM.
 
 The browser writes directly to both services. No Supabase Edge Function and no
 Resend integration are required for lead capture.
 
 If Web3Forms is not configured yet, the form still works by opening a prefilled
-email to `info@tekzura.com`, so no lead is lost.
+email to `info@caldeforge.com`, so no lead is lost.
 
 ## One-time setup
 
@@ -42,9 +42,9 @@ This is why the Supabase anon key is safe to expose in the browser.
 
 ### 5. Point the frontend at Web3Forms and Supabase
 
-Create or verify the Web3Forms access key using `info@tekzura.com`. Web3Forms
+Create or verify the Web3Forms access key using `info@caldeforge.com`. Web3Forms
 delivers notifications to the email address connected to the access key, so the
-key itself must be tied to Tekzura's notification inbox.
+key itself must be tied to caldeforge's notification inbox.
 
 In your Vercel project (and local `.env`):
 ```
@@ -54,7 +54,7 @@ VITE_SUPABASE_ANON_KEY=YOUR_SUPABASE_ANON_KEY
 ```
 
 Redeploy the site. Submissions now trigger a Web3Forms email to
-`info@tekzura.com` and insert a row in Supabase. If Web3Forms is configured but
+`info@caldeforge.com` and insert a row in Supabase. If Web3Forms is configured but
 the email request fails, the website shows an error instead of silently treating
 Supabase storage as a successful notification.
 

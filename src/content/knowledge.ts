@@ -1,7 +1,7 @@
 import { caseStudies, services, siteConfig, team, testimonials } from './site';
 import { insightCaseStudies } from './insights';
 
-// The 9-stage Tekzura Product Studio framework (mirrors ProductStudioFramework.tsx).
+// The 9-stage caldeforge Product Studio framework (mirrors ProductStudioFramework.tsx).
 const productStudioStages = [
   'Idea Validation',
   'Product Strategy',
@@ -62,7 +62,7 @@ function build(): string {
 
   const countries = Array.from(new Set(testimonials.map((t) => t.country))).join(', ');
   sections.push(
-    `CLIENTS & PROOF: ${testimonials.length}+ client testimonials from founders, CEOs, and product leaders across ${countries}. Tekzura works with international clients and startups.`,
+    `CLIENTS & PROOF: ${testimonials.length}+ client testimonials from founders, CEOs, and product leaders across ${countries}. caldeforge works with international clients and startups.`,
   );
 
   sections.push('INSIGHTS / CASE STUDIES:');

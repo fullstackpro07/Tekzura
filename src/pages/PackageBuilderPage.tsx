@@ -24,7 +24,7 @@ export default function PackageBuilderPage() {
     <>
       <Seo
         title="Build Your Custom Package"
-        description="Pick Tekzura services, get an instant estimate, and request a custom quote in minutes."
+        description="Pick caldeforge services, get an instant estimate, and request a custom quote in minutes."
         path="/build-package"
       />
       <section className="section package-builder-page">

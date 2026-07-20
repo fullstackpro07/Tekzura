@@ -21,9 +21,9 @@ export default function HomePage() {
         <div className="container home-hero-grid">
           <div className="hero-copy">
 
-            <h1>{homePageH1}</h1>
+            <h2>{homePageH1}</h2>
             <p className="lead">
-              Tekzura transforms ideas into launch-ready assets with strategy, engineering, and marketing under one roof.
+              caldeforge transforms ideas into launch-ready assets with strategy, engineering, and marketing under one roof.
             </p>
             <div className="button-row">
               <a className="button button-primary" href={siteConfig.calendly} target="_blank" rel="noreferrer">
@@ -33,13 +33,13 @@ export default function HomePage() {
                 See How We Scale Products <ArrowRight aria-hidden="true" />
               </a>
             </div>
-            <ul className="hero-points" aria-label="Why teams choose Tekzura">
+            <ul className="hero-points" aria-label="Why teams choose caldeforge">
               <li><CheckCircle2 aria-hidden="true" /> Product strategy to launch</li>
               <li><CheckCircle2 aria-hidden="true" /> Conversion-focused execution</li>
               <li><CheckCircle2 aria-hidden="true" /> Growth support after release</li>
             </ul>
           </div>
-          <div className="hero-signal-panel" aria-label="Tekzura product studio model">
+          <div className="hero-signal-panel" aria-label="caldeforge product studio model">
 
             <strong>From idea to launch, traction, and scale.</strong>
             <div className="signal-flow">
@@ -59,7 +59,7 @@ export default function HomePage() {
         </div>
         <a className="hero-scroll-cue" href="#capabilities"><MoveDown aria-hidden="true" /> Explore Capabilities</a>
       </section>
-      <section className="trust-strip capability-rail" aria-label="Tekzura capabilities">
+      <section className="trust-strip capability-rail" aria-label="caldeforge capabilities">
         <div className="container trust-grid">
           <div><strong>Development</strong><span>Full stack, WordPress & Shopify</span></div>
           <div><strong>Marketing</strong><span>SEO, ads, YouTube & automation</span></div>

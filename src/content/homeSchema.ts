@@ -6,7 +6,7 @@ export const homeFaqs = [
     answer: 'After a focused discovery call, we confirm the scope, delivery team, milestones, and earliest practical start date.',
   },
   {
-    question: 'Can Tekzura work with our existing team and systems?',
+    question: 'Can caldeforge work with our existing team and systems?',
     answer: 'Yes. We can own a defined workstream or collaborate with internal product, marketing, and operations teams using your existing tools.',
   },
   {
@@ -19,9 +19,9 @@ export const homeFaqs = [
   },
 ];
 
-export const homePageTitle = 'Tekzura | Full Stack Development, AI & Digital Growth Agency';
+export const homePageTitle = 'caldeforge | Full Stack Development, AI & Digital Growth Agency';
 export const homePageDescription =
-  'Tekzura helps businesses build modern websites, AI solutions, Shopify stores, WordPress platforms, and digital marketing systems that drive growth.';
+  'caldeforge helps businesses build modern websites, AI solutions, Shopify stores, WordPress platforms, and digital marketing systems that drive growth.';
 export const homePageH1 = 'Full Stack Development & Digital Growth Solutions for Modern Businesses';
 
 export function buildHomeSchema() {
@@ -38,7 +38,7 @@ export function buildHomeSchema() {
         url: siteConfig.url,
         email: siteConfig.email,
         telephone: siteConfig.phone,
-        logo: `${siteConfig.url}/tekzura-mark.png`,
+        logo: `${siteConfig.url}/caldeforge-logo.png`,
         address: {
           '@type': 'PostalAddress',
           addressLocality: 'Bahawalpur',

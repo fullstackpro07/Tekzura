@@ -70,7 +70,7 @@ export default function InvestorSection() {
         </div>
 
         <Reveal className="investor-panel-wrap">
-          <aside className="investor-panel" aria-label="What founders get with Tekzura">
+          <aside className="investor-panel" aria-label="What founders get with caldeforge">
             <div className="investor-panel-head">
               <span className="investor-panel-badge"><LayoutDashboard aria-hidden="true" /> Founder dashboard</span>
               <span className="investor-panel-status"><i aria-hidden="true" /> Investor-ready</span>

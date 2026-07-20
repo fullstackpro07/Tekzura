@@ -17,7 +17,7 @@ function TeamPortrait({ member }: { member: TeamMember }) {
     return (
       <img
         src={member.image}
-        alt={`${member.name}, ${member.role} at Tekzura`}
+        alt={`${member.name}, ${member.role} at caldeforge`}
         width={member.width}
         height={member.height}
         loading="lazy"
@@ -154,7 +154,7 @@ export function FounderSpotlight() {
         <div className="founder-portrait">
           <img
             src={founder.image}
-            alt={`${founder.name}, ${founder.role} at Tekzura`}
+            alt={`${founder.name}, ${founder.role} at caldeforge`}
             width={founder.width}
             height={founder.height}
             loading="lazy"
@@ -168,10 +168,10 @@ export function FounderSpotlight() {
           <p className="eyebrow">Founder-led delivery</p>
           <h2>Built around clear thinking, dependable execution, and lasting client relationships.</h2>
           <blockquote>
-            <p>&ldquo;Tekzura exists to make ambitious digital work feel practical: understand the real problem, bring the right people together, and keep delivery transparent from start to finish.&rdquo;</p>
+            <p>&ldquo;caldeforge exists to make ambitious digital work feel practical: understand the real problem, bring the right people together, and keep delivery transparent from start to finish.&rdquo;</p>
           </blockquote>
           <p>
-            Muhammad Yasir leads Tekzura&rsquo;s strategy and client partnerships, connecting business goals with focused product, engineering, automation, and growth delivery.
+            Muhammad Yasir leads caldeforge&rsquo;s strategy and client partnerships, connecting business goals with focused product, engineering, automation, and growth delivery.
           </p>
           <Link className="text-link" to="/about">
             Read Our Story <ArrowRight aria-hidden="true" />

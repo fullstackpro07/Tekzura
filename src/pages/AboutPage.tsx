@@ -31,7 +31,7 @@ const companyPillars = [
   {
     icon: Target,
     title: 'Start With The Business Case',
-    text: 'Before Tekzura designs or builds, we clarify the offer, audience, revenue path, and decision your customer needs to make.',
+    text: 'Before caldeforge designs or builds, we clarify the offer, audience, revenue path, and decision your customer needs to make.',
   },
   {
     icon: Workflow,
@@ -41,7 +41,7 @@ const companyPillars = [
   {
     icon: Rocket,
     title: 'Build For Launch, Not Presentation',
-    text: 'Tekzura focuses on usable flows, fast pages, clean handover, analytics, and growth actions clients can actually run after launch.',
+    text: 'caldeforge focuses on usable flows, fast pages, clean handover, analytics, and growth actions clients can actually run after launch.',
   },
   {
     icon: ShieldCheck,
@@ -57,7 +57,7 @@ const operatingModel = [
   'Launch with measurement in place, then improve based on user behavior and business signals.',
 ];
 
-const whyChooseTekzura = [
+const whyChoosecaldeforge = [
   {
     icon: Award,
     title: 'Proven Track Record',
@@ -104,7 +104,7 @@ export default function AboutPage() {
     <>
       <Seo
         title="About"
-        description="Learn about Tekzura, a Bahawalpur-based product development and growth studio helping clients build digital products, automation workflows, and growth systems."
+        description="Learn about caldeforge, a Bahawalpur-based product development and growth studio helping clients build digital products, automation workflows, and growth systems."
         path="/about"
       />
       <section className="about-hero" aria-labelledby="about-hero-title">
@@ -112,9 +112,9 @@ export default function AboutPage() {
         <div className="about-hero-overlay" aria-hidden="true" />
         <div className="container about-hero-inner">
 
-          <h1 id="about-hero-title">Tekzura builds the digital systems behind growing businesses.</h1>
+          <h1 id="about-hero-title">caldeforge builds the digital systems behind growing businesses.</h1>
           <p>
-            From Bahawalpur to global clients, Tekzura brings product strategy, full-stack development, automation, AI workflows, and growth execution into one accountable studio.
+            From Bahawalpur to global clients, caldeforge brings product strategy, full-stack development, automation, AI workflows, and growth execution into one accountable studio.
           </p>
           <div className="button-row">
             <Link className="button button-primary" to="/get-started">
@@ -124,7 +124,7 @@ export default function AboutPage() {
               Book a Strategy Call
             </a>
           </div>
-          <div className="about-hero-proof" aria-label="Tekzura company strengths">
+          <div className="about-hero-proof" aria-label="caldeforge company strengths">
             <span>Founder-Led Studio</span>
             <span>Product & Growth Delivery</span>
             <span>Remote-Ready Execution</span>
@@ -135,19 +135,19 @@ export default function AboutPage() {
       <section className="section about-company-section">
         <div className="container about-company-grid">
           <div className="about-company-copy">
-            <p className="eyebrow">The Tekzura Story</p>
+            <p className="eyebrow">The caldeforge Story</p>
             
             <p>
-              Many businesses come to us with a scattered digital setup: a slow website, disconnected tools, weak lead flow, manual operations, or a product idea that needs structure. Tekzura’s role is to turn that confusion into a practical roadmap and then build the system behind it.
+              Many businesses come to us with a scattered digital setup: a slow website, disconnected tools, weak lead flow, manual operations, or a product idea that needs structure. caldeforge’s role is to turn that confusion into a practical roadmap and then build the system behind it.
             </p>
             <p>
-              Tekzura is built as a product development and growth studio where strategy, engineering, automation, content, design, and marketing stay connected until the work is launched, measured, and ready to improve.
+              caldeforge is built as a product development and growth studio where strategy, engineering, automation, content, design, and marketing stay connected until the work is launched, measured, and ready to improve.
             </p>
           </div>
 
           <div className="about-company-card">
             <Building2 aria-hidden="true" />
-            <span>What Tekzura Is</span>
+            <span>What caldeforge Is</span>
             <h3>{siteConfig.tagline}</h3>
             <p>{siteConfig.description}</p>
             
@@ -156,7 +156,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="section section-soft about-stats-section" aria-label="Tekzura company snapshot">
+      <section className="section section-soft about-stats-section" aria-label="caldeforge company snapshot">
         <div className="container about-stats-grid">
           {companyStats.map((stat) => (
             <article key={stat.label}>
@@ -171,7 +171,7 @@ export default function AboutPage() {
         <div className="container">
           <SectionHeading
             eyebrow=""
-            title="Tekzura treats every project as part of the client’s growth system."
+            title="caldeforge treats every project as part of the client’s growth system."
             description="A website should earn trust. A product should solve a real workflow. Automation should save time. Marketing should create qualified conversations. That is the standard we use when shaping work."
             align="center"
           />
@@ -193,19 +193,19 @@ export default function AboutPage() {
       <TeamShowcase
         variant="about"
         eyebrow=""
-        title="The people behind Tekzura"
+        title="The people behind caldeforge"
         description={`${team.length} specialists working together as one delivery team — from strategy and engineering to growth and operations.`}
       />
       <section className="section section-soft about-why-section">
         <div className="container">
           <SectionHeading
             eyebrow=""
-            title="Why Choose Tekzura?"
+            title="Why Choose caldeforge?"
             description=""
             align="center"
           />
           <div className="about-why-grid">
-            {whyChooseTekzura.map((item) => {
+            {whyChoosecaldeforge.map((item) => {
               const Icon = item.icon;
               return (
                 <article key={item.title} className="about-why-card">
@@ -220,8 +220,8 @@ export default function AboutPage() {
       </section>
 
       <ConversionCTA
-        eyebrow="Work with Tekzura"
-        title="Bring Tekzura the business problem, not just a feature list."
+        eyebrow="Work with caldeforge"
+        title="Bring caldeforge the business problem, not just a feature list."
         description="We will help clarify what should be built first, what can wait, and how the work should move toward launch, traction, and long-term improvement."
         bullets={['Founder-led discovery', 'Product and growth thinking', 'Clear delivery path']}
         tone="dark"

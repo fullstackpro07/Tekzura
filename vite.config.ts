@@ -10,7 +10,7 @@ import { DEFAULT_MODEL, generateChatReply, sanitizeContext, sanitizeMessages } f
 // chatbot works under `npm run dev` without needing `vercel dev`.
 function chatDevApi(env: Record<string, string>): PluginOption {
   return {
-    name: 'tekzura-chat-dev-api',
+    name: 'caldeforge-chat-dev-api',
     configureServer(server) {
       server.middlewares.use('/api/chat', async (req, res) => {
         const send = (status: number, body: unknown) => {
@@ -48,7 +48,7 @@ function chatDevApi(env: Record<string, string>): PluginOption {
 
 function sitemapPlugin(): PluginOption {
   return {
-    name: 'tekzura-sitemap',
+    name: 'caldeforge-sitemap',
     closeBundle() {
       const staticPaths = [
         '/',

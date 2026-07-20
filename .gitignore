@@ -9,7 +9,7 @@ build/
 .env.*.local
 .supabase/
 *.png
-!public/tekzura-mark.png
+!public/caldeforge-logo.png
 !public/favicon.png
 !public/chatbot/avatar.png
 !design-assets/logo-original.png

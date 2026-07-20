@@ -36,13 +36,13 @@ export default function BlogPage() {
     <>
       <Seo
         title="Insights"
-        description="Tekzura case studies and project insights on web development, AI automation, design, marketing, and infrastructure."
+        description="caldeforge case studies and project insights on web development, AI automation, design, marketing, and infrastructure."
         path="/blog"
       />
       <PageHero
         eyebrow=""
         title="Case Studies and Practical Delivery Lessons."
-        description="Explore how Tekzura approaches product, growth, and operations work — from challenge and approach through measurable outcome."
+        description="Explore how caldeforge approaches product, growth, and operations work — from challenge and approach through measurable outcome."
         visual=""
         visualAlt="Digital operations specialist reviewing structured records and quality reporting"
         theme="dark"
@@ -85,7 +85,7 @@ export default function BlogPage() {
       <ConversionCTA
         eyebrow="Apply the thinking"
         title="Ready to turn insight into execution?"
-        description="If a case study sparked a product, automation, or growth idea, Tekzura can help validate it and build the next useful version."
+        description="If a case study sparked a product, automation, or growth idea, caldeforge can help validate it and build the next useful version."
         bullets={['Idea validation', 'Execution plan', 'Build support']}
       />
     </>

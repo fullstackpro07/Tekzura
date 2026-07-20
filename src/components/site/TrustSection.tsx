@@ -27,13 +27,13 @@ const reasons = [
 
 export default function TrustSection() {
   return (
-    <section className="section section-soft why-tekzura-section" aria-labelledby="why-tekzura-title">
+    <section className="section section-soft why-caldeforge-section" aria-labelledby="why-caldeforge-title">
       <div className="container">
         <Reveal>
           <SectionHeading
             eyebrow=""
             title="One partner for product, launch, and growth."
-            description="Tekzura connects strategy, design, engineering, marketing, and iteration so every decision moves the product closer to traction."
+            description="caldeforge connects strategy, design, engineering, marketing, and iteration so every decision moves the product closer to traction."
             align="center"
           />
         </Reveal>

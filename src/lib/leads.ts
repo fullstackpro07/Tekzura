@@ -19,10 +19,10 @@ const web3FormsEndpoint = 'https://api.web3forms.com/submit';
 const notificationEmail = siteConfig.email;
 
 const sourceLabel: Record<LeadSource, string> = {
-  'get-started': 'Tekzura Get Started form',
-  chatbot: 'Tekzura AI assistant',
-  contact: 'Tekzura Contact form',
-  'package-builder': 'Tekzura Package Builder',
+  'get-started': 'caldeforge Get Started form',
+  chatbot: 'caldeforge AI assistant',
+  contact: 'caldeforge Contact form',
+  'package-builder': 'caldeforge Package Builder',
 };
 
 export function isValidEmail(value: string) {

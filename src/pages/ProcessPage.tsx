@@ -18,7 +18,7 @@ export default function ProcessPage() {
     <>
       <Seo
         title="Process"
-        description="See how Tekzura delivers digital products — a clear five-stage process from discovery through launch."
+        description="See how caldeforge delivers digital products — a clear five-stage process from discovery through launch."
         path="/process"
       />
 
@@ -27,7 +27,7 @@ export default function ProcessPage() {
         title="Structured delivery, from first conversation to launch."
         description="A focused five-stage approach that keeps strategy, execution, and accountability in one place."
       
-        visualAlt="Tekzura team collaborating on a delivery plan"
+        visualAlt="caldeforge team collaborating on a delivery plan"
         theme="dark"
       >
         

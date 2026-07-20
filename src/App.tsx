@@ -18,14 +18,14 @@ const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
 
 function PageLoader() {
   return (
-    <div className="page-loader" role="status" aria-live="polite" aria-label="Loading Tekzura">
+    <div className="page-loader" role="status" aria-live="polite" aria-label="Loading caldeforge">
       <div className="loader-simple">
         <div className="loader-mark" aria-hidden="true">
           <i /><i />
-          <img src="/tekzura-mark.png" alt="" width="52" height="52" />
+          <img src="/caldeforge-logo.png" alt="" width="52" height="52" />
         </div>
         <div className="loader-copy">
-          <strong>Tekzura</strong>
+          <strong>caldeforge</strong>
           <span>Preparing your experience</span>
         </div>
         <div className="loader-progress" aria-hidden="true"><i /></div>

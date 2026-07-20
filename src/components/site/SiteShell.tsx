@@ -30,9 +30,9 @@ function ScrollManager() {
 
 function Logo() {
   return (
-    <Link className="brand" to="/" aria-label="Tekzura home">
-      <img className="brand-mark" src="/tekzura-mark.png" alt="" width="254" height="254" />
-      <span>Tekzura</span>
+    <Link className="brand" to="/" aria-label="caldeforge home">
+      <img className="brand-mark" src="/caldeforge-logo.png" alt="" width="254" height="254" />
+      <span>caldeforge</span>
     </Link>
   );
 }
@@ -126,7 +126,7 @@ export default function SiteShell() {
           </nav>
           <button type="button" className="header-chat-link" onClick={openChat}>
             <MessageSquare aria-hidden="true" />
-            Ask Tekzura AI
+            Ask caldeforge AI
           </button>
           <Link className="button button-primary header-cta" to="/contact">
             <PhoneCall aria-hidden="true" />
@@ -232,7 +232,7 @@ export default function SiteShell() {
           </div>
         </div>
         <div className="container footer-bottom">
-          <span>© {new Date().getFullYear()} Tekzura. All rights reserved.</span>
+          <span>© {new Date().getFullYear()} caldeforge. All rights reserved.</span>
           <span>Digital solutions built with clarity.</span>
         </div>
       </footer>

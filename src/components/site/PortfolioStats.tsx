@@ -104,11 +104,11 @@ export default function PortfolioStats() {
   }, [reduceMotion]);
 
   return (
-    <section className="portfolio-stats-section" id="portfolio-stats" aria-label="Tekzura portfolio statistics">
+    <section className="portfolio-stats-section" id="portfolio-stats" aria-label="caldeforge portfolio statistics">
       <div className="container" ref={ref}>
         <div className="portfolio-stats-heading">
           
-          <h2 className="section-title">Why Choose Tekzura?</h2>
+          <h2 className="section-title">Why Choose caldeforge?</h2>
           <p>This highlights our skills, experience, and quality of work, demonstrating our commitment to excellence.</p>
         </div>
         <div className="portfolio-stats-panel">
