@@ -17,12 +17,16 @@ export const homeFaqs = [
     question: 'What happens after launch?',
     answer: 'We provide handover guidance and can continue through maintenance, optimization, campaign support, or the next prioritized product phase.',
   },
+  {
+    question: 'What is your approach to MVP development?',
+    answer: 'We focus on rapid prototyping and iterative development to get your product to market quickly while ensuring it meets user needs and business goals.',
+  },
 ];
 
-export const homePageTitle = 'caldeforge | Full Stack Development, AI & Digital Growth Agency';
+export const homePageTitle = 'caldeforge | Full-Stack Development & AI Growth Studio';
 export const homePageDescription =
-  'caldeforge helps businesses build modern websites, AI solutions, Shopify stores, WordPress platforms, and digital marketing systems that drive growth.';
-export const homePageH1 = 'Full Stack Development & Digital Growth Solutions for Modern Businesses';
+  'caldeforge is a full-stack development and AI growth studio building websites, apps, automation, and marketing systems that turn ideas into scalable products.';
+export const homePageH1 = 'Where strategy meets execution — and ideas become assets.';
 
 export function buildHomeSchema() {
   const organizationId = `${siteConfig.url}/#organization`;

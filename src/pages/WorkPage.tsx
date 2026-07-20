@@ -39,16 +39,16 @@ export default function WorkPage() {
     <>
       <Seo
         title="Work"
-        description="Explore caldeforge client work and public product examples — digital marketing, web, SaaS, Shopify, WordPress, apps, and websites with live links."
+        description="Explore caldeforge client work — digital marketing, web development, SaaS, Shopify, and WordPress projects with live links."
         path="/work"
       />
       <PageHero
         eyebrow=""
-        title="Client delivery and product work in one place."
-        description={`${workSectionStats.total} public projects across ${workSectionStats.serviceAreas} service areas — client-facing delivery plus product examples you can click through and verify.`}
+        title="Client delivery, one project at a time."
+        description={`${workSectionStats.total} client projects across ${workSectionStats.serviceAreas} service areas — every link is real, live delivery work you can click through and verify.`}
         theme="dark"
       >
-        
+
       </PageHero>
 
       <section className="section work-stats-band" aria-label="Portfolio statistics">
@@ -57,14 +57,6 @@ export default function WorkPage() {
             <article>
               <strong>{workSectionStats.total}</strong>
               <span>Projects</span>
-            </article>
-            <article>
-              <strong>{workSectionStats.clientProjects}</strong>
-              <span>Client-facing</span>
-            </article>
-            <article>
-              <strong>{workSectionStats.productExamples}</strong>
-              <span>Product-facing</span>
             </article>
             <article>
               <strong>{workSectionStats.serviceAreas}</strong>

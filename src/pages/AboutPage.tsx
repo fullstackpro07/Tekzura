@@ -18,13 +18,14 @@ import ConversionCTA from '../components/site/ConversionCTA';
 import { SectionHeading } from '../components/site/PageElements';
 import Seo from '../components/site/Seo';
 import { siteConfig, team } from '../content/site';
+import { portfolioStats } from '../content/portfolio';
 import { CommonQuestions, TeamShowcase } from '../components/site/TeamSections';
 
 const companyStats = [
-  { value: `10+`, label: 'Years of Experience' },
-  { value: `230+`, label: 'Successful Projects' },
-  { value: '160+', label: 'Trusted Clients' },
-  { value: '6', label: 'countries served' },
+  { value: `${portfolioStats.yearsOfExperience}+`, label: 'Years of Experience' },
+  { value: `${portfolioStats.entries}+`, label: 'Successful Projects' },
+  { value: `${portfolioStats.trustedClients}+`, label: 'Trusted Clients' },
+  { value: `${portfolioStats.countries}`, label: 'countries served' },
 ];
 
 const companyPillars = [

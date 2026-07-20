@@ -1,11 +1,11 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, type CSSProperties } from 'react';
 import { ArrowUpRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { portfolioStats } from '../../content/portfolio';
 
 const stats = [
   {
-    value: portfolioStats.categories,
+    value: portfolioStats.yearsOfExperience,
     suffix: '+',
     label: 'Years of Experience',
   },
@@ -15,9 +15,8 @@ const stats = [
     label: 'Projects',
     href: '/work',
   },
-  
   {
-    value: portfolioStats.testimonials,
+    value: portfolioStats.trustedClients,
     suffix: '+',
     label: 'Trusted Clients',
   },
@@ -29,16 +28,16 @@ const stats = [
 ];
 
 const selectedBrands = [
-  { name: 'GPLine', url: 'https://gpline.ie' },
+  { name: 'GPLine', url: 'https://gpline.ie', logo: 'https://www.gpline.ie/_next/image?url=%2Fimages%2Flogogp.png&w=384&q=75', tint: true },
   { name: 'My Next Step', url: 'https://mynextstep.jobs/' },
-  { name: 'Lightning League', url: 'https://lightningleague.com/' },
-  { name: 'SocialBu', url: 'https://socialbu.com/' },
-  { name: 'PinCatch', url: 'https://www.pincatch.com/' },
-  { name: 'SkillSprint30', url: 'https://www.skillsprint30.com/' },
+  { name: 'Lightning League', url: 'https://lightningleague.com/', logo: 'https://lightningleague.com/ll.png', tint: true },
+  { name: 'SocialBu', url: 'https://socialbu.com/', logo: 'https://socialbu.com/images/redesign/logo.svg' },
+  { name: 'PinCatch', url: 'https://www.pincatch.com/', logo: 'https://pincatch.com/static/images/pincatch-logo.svg', scale: 1.5 },
+  { name: 'SkillSprint30', url: 'https://www.skillsprint30.com/', logo: 'https://www.skillsprint30.com/_next/image?url=%2Flogo.png&w=1920&q=75' },
   { name: 'Root Rituals', url: 'https://rootrituals.store/' },
-  { name: 'Funded King', url: 'https://fundedking.com/' },
-  { name: 'NextGen Migration', url: 'https://nextgenmigrationcs.com.au/' },
-  { name: 'Engineered With AI', url: 'https://engineeredwith.ai/' },
+  { name: 'Funded King', url: 'https://fundedking.com/', logo: 'https://fundedking.com/assets/images/dark-logo.png', tint: true },
+  { name: 'NextGen Migration', url: 'https://nextgenmigrationcs.com.au/', logo: 'https://nextgenmigrationcs.com.au/wp-content/uploads/2025/07/Next-Gen-Logo.png', scale: 1.3 },
+  { name: 'Engineered With AI', url: 'https://engineeredwith.ai/', logo: 'https://engineeredwith.ai/wp-content/uploads/2025/07/logo-e1753886056847.png' },
 ];
 
 function AnimatedNumber({
@@ -128,7 +127,10 @@ export default function PortfolioStats() {
       </div>
 
       <div className="client-brand-rail" aria-label="Selected brands and companies">
-        
+        <div className="client-brand-rail-head">
+          <span>Trusted by growing brands</span>
+          
+        </div>
         <div className="client-brand-marquee">
           {[false, true].map((duplicate) => (
             <div className="client-brand-track" aria-hidden={duplicate || undefined} key={String(duplicate)}>
@@ -142,7 +144,17 @@ export default function PortfolioStats() {
                   translate="no"
                   aria-label={`Visit ${brand.name}`}
                 >
-                  {brand.name}
+                  {brand.logo
+                    ? (
+                      <img
+                        src={brand.logo}
+                        alt={brand.name}
+                        loading="lazy"
+                        className={brand.tint ? 'client-logo-tint' : undefined}
+                        style={brand.scale ? ({ '--logo-scale': brand.scale } as CSSProperties) : undefined}
+                      />
+                    )
+                    : brand.name}
                 </a>
               ))}
             </div>

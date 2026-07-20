@@ -16,17 +16,14 @@ function DashboardVisual({
   category: ShowcaseCategoryView;
   projects: ShowcaseProject[];
 }) {
-  const { industries, categories, types } = projectMetrics(projects);
-  const isMerged = category.source === 'merged';
-  const isClient = category.source === 'client';
-  const Icon = category.title.includes('SaaS') ? Cloud : category.title.includes('App') || category.title.includes('Web') ? Layers3 : isClient ? Link2 : Globe2;
-  const portfolioLabel = isMerged ? 'Unified portfolio' : isClient ? 'Client portfolio' : 'Traffic portfolio';
+  const { industries, types } = projectMetrics(projects);
+  const Icon = category.title.includes('SaaS') ? Cloud : category.title.includes('Web') ? Layers3 : Link2;
 
   return (
     <div className="work-projects-visual" role="img" aria-label={`${category.title} portfolio dashboard`}>
       <div className="work-projects-visual-head">
         <div>
-          
+
           <strong>{category.title} dashboard</strong>
         </div>
 
@@ -41,17 +38,17 @@ function DashboardVisual({
         <article>
           <BarChart3 aria-hidden="true" />
           <b>{industries}</b>
-          <small>{isClient && !isMerged ? 'Segments' : 'Industries'}</small>
+          <small>Segments</small>
         </article>
         <article>
           <TrendingUp aria-hidden="true" />
-          <b>{isMerged ? types : isClient ? types : categories}</b>
-          <small>{isMerged ? 'Types' : isClient ? 'Platforms' : 'Categories'}</small>
+          <b>{types}</b>
+          <small>Platforms</small>
         </article>
         <article>
           <Globe2 aria-hidden="true" />
-          <b>{isClient && !isMerged ? 'Public' : isMerged ? 'Live' : '5K+'}</b>
-          <small>{isClient && !isMerged ? 'Live links' : isMerged ? 'Public links' : 'Monthly traffic'}</small>
+          <b>Public</b>
+          <small>Live links</small>
         </article>
       </div>
 

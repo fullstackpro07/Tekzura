@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { ArrowRight, CalendarDays, ChevronDown, Menu, MessageSquare, PhoneCall, Send, SlidersHorizontal, X } from 'lucide-react';
 import { Link, NavLink, Outlet, useLocation } from 'react-router-dom';
@@ -15,6 +15,7 @@ function openChat() {
 const navigation = [
   { label: 'Home', to: '/', end: true },
   { label: 'Work', to: '/work' },
+  { label: 'Industries', to: '/industries' },
   { label: 'About', to: '/about' },
   { label: 'Process', to: '/process' },
   { label: 'Insights', to: '/blog' },
@@ -42,6 +43,19 @@ export default function SiteShell() {
   const [servicesOpen, setServicesOpen] = useState(false);
   const mobileNavRef = useRef<HTMLDivElement>(null);
   const { pathname } = useLocation();
+  const isHome = pathname === '/';
+  const [scrolledPastHero, setScrolledPastHero] = useState(() => isHome && window.scrollY > 60);
+
+  useLayoutEffect(() => {
+    if (!isHome) {
+      setScrolledPastHero(false);
+      return;
+    }
+    const onScroll = () => setScrolledPastHero(window.scrollY > 60);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, [isHome]);
   const hasDedicatedConversion = (
     pathname === '/about' ||
     pathname === '/process' ||
@@ -103,7 +117,7 @@ export default function SiteShell() {
       <ScrollManager />
       <div className="route-progress" key={pathname} aria-hidden="true" />
       <a className="skip-link" href="#main-content">Skip to Main Content</a>
-      <header className="site-header">
+      <header className={`site-header ${isHome && !scrolledPastHero ? 'header-on-hero' : ''}`}>
         <div className="container header-inner">
           <Logo />
           <nav className="desktop-nav" aria-label="Primary navigation">
@@ -181,7 +195,7 @@ export default function SiteShell() {
         document.body,
       )}
 
-      <main id="main-content"><Outlet /></main>
+      <main id="main-content" className={isHome ? 'main-content-bleed' : ''}><Outlet /></main>
 
       {!hasDedicatedConversion && (
         <section className="cta-band" aria-labelledby="cta-title">
@@ -213,6 +227,7 @@ export default function SiteShell() {
             <h2>Company</h2>
             <Link to="/about">About</Link>
             <Link to="/work">Work</Link>
+            <Link to="/industries">Industries</Link>
             <Link to="/blog">Insights</Link>
             <Link to="/get-started">Get Started</Link>
             <Link to="/contact">Talk to sales</Link>

@@ -32,6 +32,7 @@ import {
   type PackageServiceItem,
 } from '../../content/packageBuilder';
 import { services, siteConfig, type ServiceSlug } from '../../content/site';
+import { portfolioStats } from '../../content/portfolio';
 import { isValidEmail, submitPackageQuote, type PackageQuoteFields } from '../../lib/leads';
 
 type Step = 1 | 2 | 3;
@@ -590,7 +591,7 @@ export default function PackageBuilder({ initialSelection = [] }: PackageBuilder
           <div className="package-wait-box">
             <h3><Clock3 aria-hidden="true" /> While you wait — explore our work</h3>
             <div className="package-wait-grid">
-              <Link to="/work"><Star aria-hidden="true" /><strong>See our portfolio</strong><span>100+ real projects delivered</span></Link>
+              <Link to="/work"><Star aria-hidden="true" /><strong>See our portfolio</strong><span>{portfolioStats.entries}+ real projects delivered</span></Link>
               <Link to="/#testimonials"><Star aria-hidden="true" /><strong>Read reviews</strong><span>See what clients say about us</span></Link>
               <Link to="/about"><User aria-hidden="true" /><strong>Meet the team</strong><span>The people behind your project</span></Link>
             </div>

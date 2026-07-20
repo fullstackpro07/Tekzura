@@ -1,12 +1,15 @@
-import { ArrowRight, CalendarDays, CheckCircle2, MoveDown } from 'lucide-react';
+import { ArrowRight, CalendarDays, CheckCircle2, Headset, MoveDown, Palette, Megaphone, Rocket, Star } from 'lucide-react';
 import { siteConfig, team, testimonials } from '../content/site';
+import { portfolioStats } from '../content/portfolio';
 import { buildHomeSchema, homePageDescription, homePageH1, homePageTitle } from '../content/homeSchema';
 import { SectionHeading } from '../components/site/PageElements';
 import Seo from '../components/site/Seo';
 import { CapabilityExplorer } from '../components/site/InteractiveSections';
+import HeroBackground from '../components/site/HeroBackground';
 import { CommonQuestions, FounderSpotlight } from '../components/site/TeamSections';
 import TestimonialsCarousel from '../components/site/TestimonialsCarousel';
 import PortfolioStats from '../components/site/PortfolioStats';
+import TechStack from '../components/site/TechStack';
 import TrustSection from '../components/site/TrustSection';
 import ProductStudioFramework from '../components/site/ProductStudioFramework';
 import InvestorSection from '../components/site/InvestorSection';
@@ -16,7 +19,7 @@ export default function HomePage() {
     <>
       <Seo title={homePageTitle} description={homePageDescription} path="/" schema={buildHomeSchema()} />
       <section className="home-hero immersive-hero">
-        <img className="immersive-hero-image" src="/tech-studio-hero.jpg" alt="" width="1536" height="1024" fetchPriority="high" />
+        <HeroBackground />
         <div className="immersive-overlay" aria-hidden="true" />
         <div className="container home-hero-grid">
           <div className="hero-copy">
@@ -36,6 +39,7 @@ export default function HomePage() {
             <ul className="hero-points" aria-label="Why teams choose caldeforge">
               <li><CheckCircle2 aria-hidden="true" /> Product strategy to launch</li>
               <li><CheckCircle2 aria-hidden="true" /> Conversion-focused execution</li>
+              <li><CheckCircle2 aria-hidden="true" /> 100% ownership and control</li>
               <li><CheckCircle2 aria-hidden="true" /> Growth support after release</li>
             </ul>
           </div>
@@ -61,10 +65,10 @@ export default function HomePage() {
       </section>
       <section className="trust-strip capability-rail" aria-label="caldeforge capabilities">
         <div className="container trust-grid">
-          <div><strong>Development</strong><span>Full stack, WordPress & Shopify</span></div>
-          <div><strong>Marketing</strong><span>SEO, ads, YouTube & automation</span></div>
-          <div><strong>Design</strong><span>Brand, content & visual identity</span></div>
-          <div><strong>Support</strong><span>Live chat, VA & helpdesk ops</span></div>
+          <div><Rocket aria-hidden="true" /><strong>MVP Development</strong><span>Fast, iterative, and scalable</span></div>
+          <div><Megaphone aria-hidden="true" /><strong>Marketing</strong><span>SEO, ads, YouTube & automation</span></div>
+          <div><Palette aria-hidden="true" /><strong>Design</strong><span>Brand, content & visual identity</span></div>
+          <div><Headset aria-hidden="true" /><strong>Support</strong><span>Live chat, VA & helpdesk ops</span></div>
         </div>
       </section>
 
@@ -75,6 +79,8 @@ export default function HomePage() {
       <PortfolioStats />
 
       <CapabilityExplorer variant="dashboard" />
+
+      <TechStack />
 
       <ProductStudioFramework />
 
@@ -90,6 +96,21 @@ export default function HomePage() {
               title="Don't just take our words for it – Take theirs!"
               description="Feedback from founders, operators, and product leaders who wanted more than task-based delivery."
             />
+            <div className="satisfaction-rating">
+              <div>
+                <strong>100%</strong>
+                <span>Satisfaction from {portfolioStats.trustedClients}+ clients — and counting!</span>
+              </div>
+              <div>
+                <div className="satisfaction-rating-stars">
+                  <strong>5.0</strong>
+                  <span className="satisfaction-rating-stars-icons" aria-hidden="true">
+                    {Array.from({ length: 5 }).map((_, index) => <Star key={index} fill="currentColor" />)}
+                  </span>
+                </div>
+                <span>Customer Satisfaction Rating</span>
+              </div>
+            </div>
           </div>
           <TestimonialsCarousel items={testimonials} />
         </div>
