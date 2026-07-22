@@ -2,6 +2,7 @@ import { useEffect, useRef, useState, type CSSProperties } from 'react';
 import { ArrowUpRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { portfolioStats } from '../../content/portfolio';
+import { publicAsset } from '../../content/site';
 
 const stats = [
   {
@@ -22,22 +23,30 @@ const stats = [
   },
   {
     value: portfolioStats.countries,
-    suffix: '',
+    suffix: '+',
     label: 'Countries & Markets',
   },
 ];
 
-const selectedBrands = [
-  { name: 'GPLine', url: 'https://gpline.ie', logo: 'https://www.gpline.ie/_next/image?url=%2Fimages%2Flogogp.png&w=384&q=75', tint: true },
-  { name: 'My Next Step', url: 'https://mynextstep.jobs/' },
-  { name: 'Lightning League', url: 'https://lightningleague.com/', logo: 'https://lightningleague.com/ll.png', tint: true },
+interface SelectedBrand {
+  name: string;
+  url: string;
+  logo?: string;
+  mono?: boolean;
+  scale?: number;
+}
+
+const selectedBrands: SelectedBrand[] = [
+  { name: 'GPLine', url: 'https://gpline.ie', logo: 'https://www.gpline.ie/_next/image?url=%2Fimages%2Flogogp.png&w=384&q=75', mono: true },
+  { name: 'My Next Step', url: 'https://mynextstep.jobs/', logo: publicAsset('/next step.png'), mono: true },
+  { name: 'Lightning League', url: 'https://lightningleague.com/', logo: 'https://lightningleague.com/ll.png', mono: true },
   { name: 'SocialBu', url: 'https://socialbu.com/', logo: 'https://socialbu.com/images/redesign/logo.svg' },
   { name: 'PinCatch', url: 'https://www.pincatch.com/', logo: 'https://pincatch.com/static/images/pincatch-logo.svg', scale: 1.5 },
   { name: 'SkillSprint30', url: 'https://www.skillsprint30.com/', logo: 'https://www.skillsprint30.com/_next/image?url=%2Flogo.png&w=1920&q=75' },
   { name: 'Root Rituals', url: 'https://rootrituals.store/' },
-  { name: 'Funded King', url: 'https://fundedking.com/', logo: 'https://fundedking.com/assets/images/dark-logo.png', tint: true },
+  { name: 'Funded King', url: 'https://fundedking.com/', logo: 'https://fundedking.com/assets/images/dark-logo.png', mono: true },
   { name: 'NextGen Migration', url: 'https://nextgenmigrationcs.com.au/', logo: 'https://nextgenmigrationcs.com.au/wp-content/uploads/2025/07/Next-Gen-Logo.png', scale: 1.3 },
-  { name: 'Engineered With AI', url: 'https://engineeredwith.ai/', logo: 'https://engineeredwith.ai/wp-content/uploads/2025/07/logo-e1753886056847.png' },
+  { name: 'Engineered With AI', url: 'https://engineeredwith.ai/', logo: 'https://engineeredwith.ai/wp-content/uploads/2025/07/logo-e1753886056847.png', mono: true },
 ];
 
 function AnimatedNumber({
@@ -128,8 +137,11 @@ export default function PortfolioStats() {
 
       <div className="client-brand-rail" aria-label="Selected brands and companies">
         <div className="client-brand-rail-head">
-          <span>Trusted by growing brands</span>
-          
+    
+          <h2 className="client-brand-eyebrow">Backed by brands who came back for more</h2>
+          <p className="client-brand-desc">
+            caldeforge is trusted by over {Math.floor(portfolioStats.trustedClients / 100) * 100}+ clients in over {portfolioStats.countries}+ countries.
+          </p>
         </div>
         <div className="client-brand-marquee">
           {[false, true].map((duplicate) => (
@@ -150,7 +162,7 @@ export default function PortfolioStats() {
                         src={brand.logo}
                         alt={brand.name}
                         loading="lazy"
-                        className={brand.tint ? 'client-logo-tint' : undefined}
+                        className={brand.mono ? 'client-logo-mono' : undefined}
                         style={brand.scale ? ({ '--logo-scale': brand.scale } as CSSProperties) : undefined}
                       />
                     )

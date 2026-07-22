@@ -84,7 +84,7 @@ export const workSectionStats = {
   industries: new Set(portfolioEntries.map((entry) => entry.industry)).size,
 };
 
-function portfolioEntryToShowcase(entry: PortfolioEntry, serviceCategory: string): ShowcaseProject {
+export function portfolioEntryToShowcase(entry: PortfolioEntry, serviceCategory: string): ShowcaseProject {
   return {
     id: entry.url,
     projectName: entry.title,

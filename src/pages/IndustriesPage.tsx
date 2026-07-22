@@ -1,3 +1,4 @@
+import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import ConversionCTA from '../components/site/ConversionCTA';
 import { PageHero, SectionHeading } from '../components/site/PageElements';
@@ -35,7 +36,7 @@ export default function IndustriesPage() {
             {industrySummaries.map((industry) => {
               const Icon = industry.icon;
               return (
-                <article className="service-card industry-card" key={industry.id}>
+                <Link className="service-card industry-card" key={industry.id} to={`/industries/${industry.id}`}>
                   <div className="industry-card-head">
                     <div className="industry-card-icon"><Icon aria-hidden="true" /></div>
                     <span className="industry-card-count">{industry.projectCount} projects</span>
@@ -49,7 +50,8 @@ export default function IndustriesPage() {
                       ))}
                     </div>
                   )}
-                </article>
+                  <span className="industry-card-link">See how we work in {industry.title.toLowerCase()} <ArrowRight aria-hidden="true" /></span>
+                </Link>
               );
             })}
           </div>

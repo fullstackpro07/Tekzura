@@ -4,8 +4,10 @@ import { ArrowRight, CalendarDays, ChevronDown, Menu, MessageSquare, PhoneCall, 
 import { Link, NavLink, Outlet, useLocation } from 'react-router-dom';
 import { PACKAGE_BUILDER_PATH } from '../../content/packageBuilder';
 import { services, siteConfig } from '../../content/site';
+import { industrySummaries } from '../../content/industries';
 import Chatbot, { OPEN_CHAT_EVENT } from './Chatbot';
 import ContactFab from './ContactFab';
+import IndustriesDropdown from './IndustriesDropdown';
 import ServicesDropdown from './ServicesDropdown';
 
 function openChat() {
@@ -15,7 +17,6 @@ function openChat() {
 const navigation = [
   { label: 'Home', to: '/', end: true },
   { label: 'Work', to: '/work' },
-  { label: 'Industries', to: '/industries' },
   { label: 'About', to: '/about' },
   { label: 'Process', to: '/process' },
   { label: 'Insights', to: '/blog' },
@@ -41,6 +42,7 @@ function Logo() {
 export default function SiteShell() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [industriesOpen, setIndustriesOpen] = useState(false);
   const mobileNavRef = useRef<HTMLDivElement>(null);
   const { pathname } = useLocation();
   const isHome = pathname === '/';
@@ -71,6 +73,7 @@ export default function SiteShell() {
   useEffect(() => {
     setMenuOpen(false);
     setServicesOpen(false);
+    setIndustriesOpen(false);
   }, [pathname]);
 
   useEffect(() => {
@@ -80,6 +83,7 @@ export default function SiteShell() {
       if (event.key === 'Escape') {
         setMenuOpen(false);
         setServicesOpen(false);
+        setIndustriesOpen(false);
       }
     };
     window.addEventListener('keydown', onKeyDown);
@@ -122,17 +126,36 @@ export default function SiteShell() {
           <Logo />
           <nav className="desktop-nav" aria-label="Primary navigation">
             <NavLink to="/" end className={({ isActive }) => (isActive ? 'active' : '')}>Home</NavLink>
-            <div className="services-nav" onMouseEnter={() => setServicesOpen(true)} onMouseLeave={() => setServicesOpen(false)}>
+            <div
+              className="services-nav"
+              onMouseEnter={() => { setServicesOpen(true); setIndustriesOpen(false); }}
+              onMouseLeave={() => setServicesOpen(false)}
+            >
               <button
                 type="button"
                 aria-expanded={servicesOpen}
                 aria-controls="services-mega-menu"
-                onClick={() => setServicesOpen((open) => !open)}
+                onClick={() => setServicesOpen((open) => { setIndustriesOpen(false); return !open; })}
               >
                 Services <ChevronDown aria-hidden="true" />
               </button>
             </div>
-            {navigation.filter((item) => item.to !== '/').map((item) => (
+            <NavLink to="/work" className={({ isActive }) => (isActive ? 'active' : '')}>Work</NavLink>
+            <div
+              className="services-nav industries-nav"
+              onMouseEnter={() => { setIndustriesOpen(true); setServicesOpen(false); }}
+              onMouseLeave={() => setIndustriesOpen(false)}
+            >
+              <button
+                type="button"
+                aria-expanded={industriesOpen}
+                aria-controls="industries-mega-menu"
+                onClick={() => setIndustriesOpen((open) => { setServicesOpen(false); return !open; })}
+              >
+                Industries <ChevronDown aria-hidden="true" />
+              </button>
+            </div>
+            {navigation.filter((item) => item.to !== '/' && item.to !== '/work').map((item) => (
               <NavLink key={item.to} to={item.to} className={({ isActive }) => (isActive ? 'active' : '')}>
                 {item.label}
               </NavLink>
@@ -167,6 +190,16 @@ export default function SiteShell() {
             <ServicesDropdown onNavigate={() => setServicesOpen(false)} />
           </div>
         </div>
+        <div
+          id="industries-mega-menu"
+          className={`mega-menu ${industriesOpen ? 'open' : ''}`}
+          onMouseEnter={() => setIndustriesOpen(true)}
+          onMouseLeave={() => setIndustriesOpen(false)}
+        >
+          <div className="container">
+            <IndustriesDropdown onNavigate={() => setIndustriesOpen(false)} />
+          </div>
+        </div>
       </header>
       {createPortal(
         <div
@@ -183,7 +216,14 @@ export default function SiteShell() {
             <Link className="mobile-nav-package" to={PACKAGE_BUILDER_PATH}>
               <SlidersHorizontal aria-hidden="true" /> Build custom package
             </Link>
-            {navigation.filter((item) => item.to !== '/').map((item) => (
+            <NavLink to="/work">Work</NavLink>
+            <Link to="/industries">Industries</Link>
+            <div className="mobile-industry-links">
+              {industrySummaries.slice(0, 6).map((industry) => (
+                <Link key={industry.id} to={`/industries/${industry.id}`}>{industry.title}</Link>
+              ))}
+            </div>
+            {navigation.filter((item) => item.to !== '/' && item.to !== '/work').map((item) => (
               <NavLink key={item.to} to={item.to}>{item.label}</NavLink>
             ))}
             <Link className="mobile-nav-cta" to="/contact">Talk to sales</Link>

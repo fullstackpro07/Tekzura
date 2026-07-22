@@ -2,6 +2,7 @@ import { writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { defineConfig, loadEnv, type PluginOption } from 'vite';
 import react from '@vitejs/plugin-react-swc';
+import { industrySummaries } from './src/content/industries';
 import { insightCaseStudies } from './src/content/insights';
 import { services, siteConfig } from './src/content/site';
 import { DEFAULT_MODEL, generateChatReply, sanitizeContext, sanitizeMessages } from './api/lib/gemini';
@@ -56,6 +57,7 @@ function sitemapPlugin(): PluginOption {
         '/services',
         '/build-package',
         '/work',
+        '/industries',
         '/blog',
         '/contact',
         '/process',
@@ -64,6 +66,7 @@ function sitemapPlugin(): PluginOption {
       const paths = [
         ...staticPaths,
         ...services.map((service) => `/services/${service.slug}`),
+        ...industrySummaries.map((industry) => `/industries/${industry.id}`),
         ...insightCaseStudies.map((study) => `/blog/${study.slug}`),
       ];
       const uniquePaths = [...new Set(paths)];
@@ -73,7 +76,7 @@ function sitemapPlugin(): PluginOption {
 ${uniquePaths
   .map((path) => {
     const loc = `${siteConfig.url}${path}`;
-    const priority = path === '/' ? '1.0' : path.startsWith('/services/') || path.startsWith('/blog/') ? '0.8' : '0.9';
+    const priority = path === '/' ? '1.0' : path.startsWith('/services/') || path.startsWith('/blog/') || path.startsWith('/industries/') ? '0.8' : '0.9';
     return `  <url><loc>${loc}</loc><lastmod>${lastmod}</lastmod><changefreq>weekly</changefreq><priority>${priority}</priority></url>`;
   })
   .join('\n')}

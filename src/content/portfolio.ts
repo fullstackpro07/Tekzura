@@ -318,5 +318,5 @@ export const portfolioStats = {
   entries: portfolioEntries.length,
   yearsOfExperience: 10,
   trustedClients: new Set(portfolioEntries.map((entry) => entry.title)).size,
-  countries: 6,
+  countries: 11,
 };
