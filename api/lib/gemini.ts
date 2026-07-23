@@ -10,13 +10,18 @@ export interface ChatMessage {
 export const MAX_MESSAGES = 20;
 export const MAX_CHARS = 4000;
 export const MAX_CONTEXT_CHARS = 12000;
-export const DEFAULT_MODEL = 'gemini-2.5-flash';
-const MODEL_FALLBACKS = ['gemini-2.5-flash-lite', 'gemini-2.0-flash-lite', 'gemini-1.5-flash'] as const;
+export const DEFAULT_MODEL = 'gemini-flash-latest';
+const MODEL_FALLBACKS = ['gemini-flash-lite-latest', 'gemini-2.5-flash', 'gemini-2.5-flash-lite'] as const;
 
-/** gemini-2.0-flash free-tier quota is 0 (deprecated); map to supported models. */
+/**
+ * New free-tier API keys currently get 0 quota on the pinned gemini-2.5-flash /
+ * gemini-2.0-flash* models; only the "-latest" aliases have working quota.
+ * Map the old pinned/deprecated names to the alias that actually works.
+ */
 const DEPRECATED_MODEL_ALIASES: Record<string, string> = {
-  'gemini-2.0-flash': 'gemini-2.5-flash',
-  'gemini-flash-latest': 'gemini-2.5-flash',
+  'gemini-2.0-flash': 'gemini-flash-latest',
+  'gemini-2.0-flash-lite': 'gemini-flash-lite-latest',
+  'gemini-1.5-flash': 'gemini-flash-latest',
 };
 
 const RETRYABLE_GEMINI_STATUSES = new Set([429, 503]);
