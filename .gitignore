@@ -9,7 +9,7 @@ build/
 .env.*.local
 .supabase/
 *.png
-!public/caldeforge-logo.png
+!public/calderforge-logo.png
 !public/favicon.png
 !public/chatbot/avatar.png
 !public/next step.png

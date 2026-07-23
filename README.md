@@ -1,6 +1,6 @@
-# caldeforge — Main Website
+# calderforge — Main Website
 
-Premium digital agency marketing site for **caldeforge**. Built with React, TypeScript, and Vite.
+Premium digital agency marketing site for **calderforge**. Built with React, TypeScript, and Vite.
 
 Design reference: [Figma — Premium Digital Agency Website](https://www.figma.com/design/3GxfAXC5YzWZwh46HTXzn1/Premium-Digital-Agency-Website)
 

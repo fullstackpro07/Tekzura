@@ -26,7 +26,7 @@ interface ChatMessage {
 const chatEndpoint = (import.meta.env.VITE_CHAT_ENDPOINT || '/api/chat').trim();
 
 /** Other components (e.g. the header) dispatch this to open the chat. */
-export const OPEN_CHAT_EVENT = 'caldeforge:open-chat';
+export const OPEN_CHAT_EVENT = 'calderforge:open-chat';
 
 const inlinePattern = /\[([^\]]+)\]\(([^)]+)\)|\*\*([^*]+)\*\*|(https?:\/\/[^\s)]+)/g;
 
@@ -89,10 +89,10 @@ function FormattedMessage({ text, onNavigate }: { text: string; onNavigate: (pat
 
 const chatbotAvatarSrc = '/chatbot/avatar.png';
 
-function CaldeforgeAvatar({ className = '' }: { className?: string }) {
+function CalderforgeAvatar({ className = '' }: { className?: string }) {
   return (
     <img
-      className={`caldeforge-chat-avatar${className ? ` ${className}` : ''}`}
+      className={`calderforge-chat-avatar${className ? ` ${className}` : ''}`}
       src={chatbotAvatarSrc}
       alt=""
       width="128"
@@ -106,7 +106,7 @@ function CaldeforgeAvatar({ className = '' }: { className?: string }) {
 const suggestionCards = [
   { icon: Code2, label: 'Build Product', text: 'I want to build a web app or SaaS product' },
   { icon: Rocket, label: 'Launch MVP', text: 'How do I launch an MVP fast?' },
-  { icon: TrendingUp, label: 'Grow Revenue', text: 'How can caldeforge help me grow?' },
+  { icon: TrendingUp, label: 'Grow Revenue', text: 'How can calderforge help me grow?' },
   { icon: Zap, label: 'Automate Work', text: 'Tell me about your automation services' },
 ];
 
@@ -139,7 +139,7 @@ export default function Chatbot() {
 
   const scrollRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
-  const panelId = 'caldeforge-chat-panel';
+  const panelId = 'calderforge-chat-panel';
 
   function closeChat() {
     setOpen(false);
@@ -279,8 +279,8 @@ export default function Chatbot() {
       name: leadName.trim(), email: leadEmail.trim(), company: '',
       service: 'Chatbot inquiry', budget: '', timeline: '',
       message: transcript
-        ? `Callback request from caldeforge AI assistant.\nSend notification to: ${siteConfig.email}\n\nConversation:\n${transcript}`
-        : `Callback request from caldeforge AI assistant.\nSend notification to: ${siteConfig.email}.`,
+        ? `Callback request from calderforge AI assistant.\nSend notification to: ${siteConfig.email}\n\nConversation:\n${transcript}`
+        : `Callback request from calderforge AI assistant.\nSend notification to: ${siteConfig.email}.`,
     }, 'chatbot');
 
     setLeadSending(false);
@@ -301,7 +301,7 @@ export default function Chatbot() {
           aria-label="Open AI assistant"
           onClick={() => setOpen(true)}
         >
-          <CaldeforgeAvatar className="caldeforge-chat-avatar-fab" />
+          <CalderforgeAvatar className="calderforge-chat-avatar-fab" />
         </button>
       )}
 
@@ -314,18 +314,18 @@ export default function Chatbot() {
         id={panelId}
         className={`chat-panel is-open${expanded ? ' is-expanded' : ''}`}
         role="dialog"
-        aria-label="caldeforge AI assistant"
+        aria-label="calderforge AI assistant"
         aria-modal={expanded || isMobile ? true : undefined}
       >
         {/* Header */}
         <header className="chat-header">
           <div className="chat-header-brand">
             <span className="chat-header-avatar" aria-hidden="true">
-              <CaldeforgeAvatar className="caldeforge-chat-avatar-header" />
+              <CalderforgeAvatar className="calderforge-chat-avatar-header" />
               <i className="chat-online-ring" aria-hidden="true" />
             </span>
             <div>
-              <strong>caldeforge AI</strong>
+              <strong>calderforge AI</strong>
               <span><i className="chat-dot" aria-hidden="true" />Your Product Growth Guide</span>
             </div>
           </div>
@@ -351,11 +351,11 @@ export default function Chatbot() {
           {isWelcome && (
             <div className="chat-welcome">
               <div className="chat-welcome-hero" aria-hidden="true">
-                <CaldeforgeAvatar className="caldeforge-chat-avatar-hero" />
+                <CalderforgeAvatar className="calderforge-chat-avatar-hero" />
               </div>
               <h2 className="chat-welcome-title">Build Something Great.</h2>
               <p className="chat-welcome-sub">
-                Ask me anything — services, process, pricing, team, or how caldeforge can help bring your idea to life.
+                Ask me anything — services, process, pricing, team, or how calderforge can help bring your idea to life.
               </p>
               <div className="chat-suggestion-grid">
                 {suggestionCards.map(({ icon: Icon, label, text }) => (
@@ -373,7 +373,7 @@ export default function Chatbot() {
           {messages.map((msg, i) => (
             <div key={i} className={`chat-msg chat-msg-${msg.role}`}>
               {msg.role === 'assistant' && (
-                <span className="chat-msg-icon" aria-hidden="true"><CaldeforgeAvatar className="caldeforge-chat-avatar-message" /></span>
+                <span className="chat-msg-icon" aria-hidden="true"><CalderforgeAvatar className="calderforge-chat-avatar-message" /></span>
               )}
               {msg.role === 'assistant' ? (
                 <div className="chat-bubble">
@@ -388,8 +388,8 @@ export default function Chatbot() {
           {/* Typing indicator */}
           {sending && (
             <div className="chat-msg chat-msg-assistant">
-              <span className="chat-msg-icon" aria-hidden="true"><CaldeforgeAvatar className="caldeforge-chat-avatar-message" /></span>
-              <p className="chat-typing" aria-label="caldeforge AI is typing"><i /><i /><i /></p>
+              <span className="chat-msg-icon" aria-hidden="true"><CalderforgeAvatar className="calderforge-chat-avatar-message" /></span>
+              <p className="chat-typing" aria-label="calderforge AI is typing"><i /><i /><i /></p>
             </div>
           )}
 
@@ -446,7 +446,7 @@ export default function Chatbot() {
               id="chat-input-field"
               ref={inputRef}
               type="text"
-              placeholder={isWelcome ? 'Ask me anything about caldeforge…' : 'Continue the conversation…'}
+              placeholder={isWelcome ? 'Ask me anything about calderforge…' : 'Continue the conversation…'}
               value={input}
               onChange={(e) => setInput(e.target.value)}
               disabled={sending}
@@ -456,7 +456,7 @@ export default function Chatbot() {
               {sending ? <Loader2 className="chat-spin" aria-hidden="true" /> : <Send aria-hidden="true" />}
             </button>
           </form>
-          <p className="chat-disclaimer">Powered by caldeforge AI · Responses may be imprecise</p>
+          <p className="chat-disclaimer">Powered by calderforge AI · Responses may be imprecise</p>
         </div>
       </div>
       )}

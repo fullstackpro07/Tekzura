@@ -80,7 +80,7 @@ const blogEnrichment: Record<
     challenge:
       'Operational teams were spending hours each week on repetitive data entry, status updates, and handoffs between tools that did not share a single source of truth.',
     solution:
-      'caldeforge mapped the highest-friction workflows, connected CRM, support, and reporting tools, and introduced AI-assisted triage for repeatable classification tasks.',
+      'calderforge mapped the highest-friction workflows, connected CRM, support, and reporting tools, and introduced AI-assisted triage for repeatable classification tasks.',
     outcome:
       'Manual processing time dropped sharply, response visibility improved, and the team could reinvest capacity into client-facing work instead of admin.',
     highlights: ['Workflow mapping', 'Tool integrations', 'AI-assisted triage', 'Operational visibility'],
@@ -297,7 +297,7 @@ const projectCaseStudyMeta: Record<string, { date: string; readTime: string; exc
       {
         heading: 'Delivery summary',
         paragraphs: [
-          'caldeforge reorganized category navigation, simplified purchase steps, and created a maintainable foundation for merchandising updates.',
+          'calderforge reorganized category navigation, simplified purchase steps, and created a maintainable foundation for merchandising updates.',
           'Performance work focused on product listing and cart flows where drop-off was highest.',
         ],
       },
@@ -341,7 +341,7 @@ const projectCaseStudyMeta: Record<string, { date: string; readTime: string; exc
       {
         heading: 'Delivery summary',
         paragraphs: [
-          'caldeforge refined the offer, built focused landing experiences, and organized paid and organic channels with clear attribution.',
+          'calderforge refined the offer, built focused landing experiences, and organized paid and organic channels with clear attribution.',
           'The result was a repeatable acquisition process built around relevant conversations instead of volume alone.',
         ],
       },

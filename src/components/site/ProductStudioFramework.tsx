@@ -41,7 +41,7 @@ const steps: { phase: Phase; title: string; text: string; icon: LucideIcon }[] =
 export default function ProductStudioFramework({
   eyebrow = '',
   title = 'Our Proven Approach to Achieve Your Objectives',
-  description = 'Achieve your business goals with our successful caldeforge Methodology, renowned for its structured planning and consistent results.',
+  description = 'Achieve your business goals with our successful calderforge Methodology, renowned for its structured planning and consistent results.',
 }: {
   eyebrow?: string;
   title?: string;
@@ -128,7 +128,7 @@ export default function ProductStudioFramework({
   };
 
   return (
-    <section className="section product-studio-section" id="product-studio" aria-label="The caldeforge Product Studio — nine-stage framework">
+    <section className="section product-studio-section" id="product-studio" aria-label="The calderforge Product Studio — nine-stage framework">
       <div className="container">
         <Reveal>
           <SectionHeading

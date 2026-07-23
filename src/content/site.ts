@@ -99,16 +99,16 @@ export interface BlogPost {
 }
 
 export const siteConfig = {
-  name: 'caldeforge',
+  name: 'calderforge',
   tagline: 'Product Development & Growth Studio',
-  email: 'info@caldeforge.com',
+  email: 'info@calderforge.com',
   phone: '+92 326 9379244',
   phoneHref: '+923269379244',
   address: 'Bahawalpur, Pakistan',
-  calendly: 'https://calendly.com/caldeforge-info/30min',
-  url: 'https://caldeforge.com',
+  calendly: 'https://calendly.com/calderforge-info/30min',
+  url: 'https://calderforge.com',
   description:
-    'caldeforge is a product development and growth studio helping teams launch digital products, automate operations, and build repeatable growth systems.',
+    'calderforge is a product development and growth studio helping teams launch digital products, automate operations, and build repeatable growth systems.',
 };
 
 const sharedFaq = [
@@ -354,7 +354,7 @@ export const team: TeamMember[] = [
     image: '/yasir.jpg',
     width: 793,
     height: 1024,
-    bio: 'Leads strategy, client partnerships, and caldeforgeâ€™s focus on practical digital outcomes.',
+    bio: 'Leads strategy, client partnerships, and calderforgeâ€™s focus on practical digital outcomes.',
     group: 'Leadership',
     gender: 'male',
   },
@@ -364,7 +364,7 @@ export const team: TeamMember[] = [
     image: '/sawera.jpg',
     width: 720,
     height: 840,
-    bio: 'Shapes caldeforge’s vision, partnerships, and growth direction alongside the leadership team.',
+    bio: 'Shapes calderforge’s vision, partnerships, and growth direction alongside the leadership team.',
     group: 'Leadership',
     gender: 'female',
   },
@@ -374,7 +374,7 @@ export const team: TeamMember[] = [
     image: '/team/mohammad-sajjad.webp',
     width: 720,
     height: 840,
-    bio: 'Leads technical direction, architecture decisions, and engineering delivery across caldeforge’s product and platform work.',
+    bio: 'Leads technical direction, architecture decisions, and engineering delivery across calderforge’s product and platform work.',
   },
   {
     name: 'Muhammad Abdullah Awais',

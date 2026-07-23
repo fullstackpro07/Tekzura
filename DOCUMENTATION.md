@@ -1,6 +1,6 @@
-# caldeforge Website — Full Documentation
+# calderforge Website — Full Documentation
 
-Complete reference for the caldeforge main marketing website: architecture, content, pages, components, styling, deployment, and maintenance.
+Complete reference for the calderforge main marketing website: architecture, content, pages, components, styling, deployment, and maintenance.
 
 ---
 
@@ -33,15 +33,15 @@ Complete reference for the caldeforge main marketing website: architecture, cont
 
 ## Overview
 
-**caldeforge** is a premium digital agency marketing website built as a single-page-application (SPA) with client-side routing. It presents the company’s services, portfolio, team, client testimonials, and contact options to prospective clients.
+**calderforge** is a premium digital agency marketing website built as a single-page-application (SPA) with client-side routing. It presents the company’s services, portfolio, team, client testimonials, and contact options to prospective clients.
 
 | Property | Value |
 |----------|-------|
-| **Project name** | `caldeforge-main-website` |
+| **Project name** | `calderforge-main-website` |
 | **Version** | 1.0.0 |
 | **Design origin** | [Figma — Premium Digital Agency Website](https://www.figma.com/design/3GxfAXC5YzWZwh46HTXzn1/Premium-Digital-Agency-Website) |
 | **Primary CTA** | Book a strategy call via Calendly |
-| **Contact email** | info@caldeforge.com |
+| **Contact email** | info@calderforge.com |
 | **Phone** | +92 326 9379244 |
 | **Location** | Bahawalpur, Pakistan |
 
@@ -85,14 +85,14 @@ npm run preview  # Preview production build locally
 ## Project Structure
 
 ```
-caldeforge/
+calderforge/
 ├── index.html                 # HTML shell, font preconnects, default meta
 ├── package.json
 ├── vite.config.ts             # Vite config (port 3000, outDir: build)
 ├── vercel.json                # SPA rewrite rules for Vercel
 ├── public/                    # Static assets served at /
 │   ├── favicon.png
-│   ├── caldeforge-logo.png
+│   ├── calderforge-logo.png
 │   ├── team/                  # Team photos (.webp) + profile SVG fallbacks
 │   ├── testimonials/          # Client portrait images
 │   └── *.jpg                  # Hero, service, and case study images
@@ -170,7 +170,7 @@ index.html
 
 ### Code-splitting
 
-All page components are **lazy-loaded** via `React.lazy()` in `App.tsx`. While a page chunk loads, a branded `PageLoader` is shown with the caldeforge mark and progress animation.
+All page components are **lazy-loaded** via `React.lazy()` in `App.tsx`. While a page chunk loads, a branded `PageLoader` is shown with the calderforge mark and progress animation.
 
 ### Data model
 
@@ -532,7 +532,7 @@ The carousel is used on the home page only.
 
 Each page sets:
 
-- `<title>` — `{Page Title} | caldeforge` (home uses just `caldeforge`)
+- `<title>` — `{Page Title} | calderforge` (home uses just `calderforge`)
 - `meta description`
 - Open Graph: `og:title`, `og:description`, `og:type`, `og:url`
 - `<link rel="canonical">`
@@ -713,8 +713,8 @@ Edit `siteConfig` in `src/content/site.ts`:
 
 ```typescript
 export const siteConfig = {
-  name: 'caldeforge',
-  email: 'info@caldeforge.com',
+  name: 'calderforge',
+  email: 'info@calderforge.com',
   phone: '+92 326 9379244',
   phoneHref: '+923269379244',
   address: 'Bahawalpur, Pakistan',
@@ -738,7 +738,7 @@ Assets are served from `public/` at the site root (`/filename`).
 | Path | Used for |
 |------|----------|
 | `/favicon.png` | Browser tab icon |
-| `/caldeforge-logo.png` | Logo, loader, favicon, apple-touch-icon |
+| `/calderforge-logo.png` | Logo, loader, favicon, apple-touch-icon |
 | `/tech-studio-hero.jpg` | Home hero background |
 | `/team-workshop.jpg` | About page hero |
 | `/service-web-development.jpg` | Services, case studies, blog |
@@ -786,4 +786,4 @@ Assets are served from `public/` at the site root (`/filename`).
 
 ---
 
-*Last updated: June 2026 — caldeforge main website v1.0.0*
+*Last updated: June 2026 — calderforge main website v1.0.0*

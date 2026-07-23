@@ -26,7 +26,7 @@ export default function HomePage() {
 
             <h2>{homePageH1}</h2>
             <p className="lead">
-              caldeforge transforms ideas into launch-ready assets with strategy, engineering, and marketing under one roof.
+              calderforge transforms ideas into launch-ready assets with strategy, engineering, and marketing under one roof.
             </p>
             <div className="button-row">
               <a className="button button-primary" href={siteConfig.calendly} target="_blank" rel="noreferrer">
@@ -36,14 +36,14 @@ export default function HomePage() {
                 See How We Scale Products <ArrowRight aria-hidden="true" />
               </a>
             </div>
-            <ul className="hero-points" aria-label="Why teams choose caldeforge">
+            <ul className="hero-points" aria-label="Why teams choose calderforge">
               <li><CheckCircle2 aria-hidden="true" /> Product strategy to launch</li>
               <li><CheckCircle2 aria-hidden="true" /> Conversion-focused execution</li>
               <li><CheckCircle2 aria-hidden="true" /> 100% ownership and control</li>
               <li><CheckCircle2 aria-hidden="true" /> Growth support after release</li>
             </ul>
           </div>
-          <div className="hero-signal-panel" aria-label="caldeforge product studio model">
+          <div className="hero-signal-panel" aria-label="calderforge product studio model">
 
             <strong>From idea to launch, traction, and scale.</strong>
             <div className="signal-flow">
@@ -63,7 +63,7 @@ export default function HomePage() {
         </div>
         <a className="hero-scroll-cue" href="#capabilities"><MoveDown aria-hidden="true" /> Explore Capabilities</a>
       </section>
-      <section className="trust-strip capability-rail" aria-label="caldeforge capabilities">
+      <section className="trust-strip capability-rail" aria-label="calderforge capabilities">
         <div className="container trust-grid">
           <div><Rocket aria-hidden="true" /><strong>MVP Development</strong><span>Fast, iterative, and scalable</span></div>
           <div><Megaphone aria-hidden="true" /><strong>Marketing</strong><span>SEO, ads, YouTube & automation</span></div>

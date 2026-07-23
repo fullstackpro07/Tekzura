@@ -117,7 +117,7 @@ export default function IndustryDetailPage() {
         <div className="container">
           <SectionHeading
             eyebrow=""
-            title={`Why ${industry.title.toLowerCase()} teams choose caldeforge`}
+            title={`Why ${industry.title.toLowerCase()} teams choose calderforge`}
             align="center"
           />
           <div className="industry-reason-grid">

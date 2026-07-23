@@ -39,7 +39,7 @@ export default function WorkPage() {
     <>
       <Seo
         title="Work"
-        description="Explore caldeforge client work — digital marketing, web development, SaaS, Shopify, and WordPress projects with live links."
+        description="Explore calderforge client work — digital marketing, web development, SaaS, Shopify, and WordPress projects with live links."
         path="/work"
       />
       <PageHero

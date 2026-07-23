@@ -46,7 +46,7 @@ export default function ServicesPage() {
           <SectionHeading
             eyebrow=""
             title="Start with the outcome, then choose the service."
-            description="Whether you need to build, market, or support, caldeforge helps define the smallest useful engagement that moves the business forward."
+            description="Whether you need to build, market, or support, calderforge helps define the smallest useful engagement that moves the business forward."
             align="center"
           />
           <div className="service-paths">

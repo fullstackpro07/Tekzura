@@ -284,7 +284,7 @@ export default function PackageBuilder({ initialSelection = [] }: PackageBuilder
     items: packageServices.filter((item) => item.categoryId === category.id),
   }));
 
-  const discussMessage = `Hi caldeforge, I just submitted package quote ${reference || 'request'} for ${quote.items.map((item) => item.shortTitle).join(', ')}.`;
+  const discussMessage = `Hi calderforge, I just submitted package quote ${reference || 'request'} for ${quote.items.map((item) => item.shortTitle).join(', ')}.`;
 
   const mobileTotalLabel = quote.items.length
     ? `${quote.estimatedOneTimeTotal > 0 ? formatCurrency(quote.estimatedOneTimeTotal) : ''}${quote.monthlySubtotal > 0 ? `${quote.estimatedOneTimeTotal > 0 ? ' + ' : ''}${formatCurrency(quote.monthlySubtotal)}/mo` : ''}`
@@ -353,7 +353,7 @@ export default function PackageBuilder({ initialSelection = [] }: PackageBuilder
               >
                 <Send aria-hidden="true" /> Get my free quote
               </button>
-              <a className="package-whatsapp-btn" href={whatsappUrl('Hi caldeforge, I want to discuss a custom package.')} target="_blank" rel="noreferrer">
+              <a className="package-whatsapp-btn" href={whatsappUrl('Hi calderforge, I want to discuss a custom package.')} target="_blank" rel="noreferrer">
                 <MessageCircle aria-hidden="true" /> Discuss on WhatsApp
               </a>
             </aside>

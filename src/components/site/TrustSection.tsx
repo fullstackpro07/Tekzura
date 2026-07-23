@@ -27,13 +27,13 @@ const reasons = [
 
 export default function TrustSection() {
   return (
-    <section className="section section-soft why-caldeforge-section" aria-labelledby="why-caldeforge-title">
+    <section className="section section-soft why-calderforge-section" aria-labelledby="why-calderforge-title">
       <div className="container">
         <Reveal>
           <SectionHeading
             eyebrow=""
             title="One partner for product, launch, and growth."
-            description="caldeforge connects strategy, design, engineering, marketing, and iteration so every decision moves the product closer to traction."
+            description="calderforge connects strategy, design, engineering, marketing, and iteration so every decision moves the product closer to traction."
             align="center"
           />
         </Reveal>

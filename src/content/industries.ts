@@ -48,7 +48,7 @@ const industryGroups: IndustryGroup[] = [
     accent: '#f79009',
     keywords: ['retail', 'fashion', 'apparel', 'footwear', 'beauty', 'crafts', 'shapewear', 'home goods', 'electronics', 'audio', 'bbq', 'pet care', 'grooming', 'herbal', 'tea /', 'supplements', 'fitness /', 'e-commerce platform', 'fragrance'],
     metaTitle: 'E-commerce & Retail Web Development and Marketing',
-    metaDescription: 'caldeforge builds Shopify stores, retail websites, and performance marketing for fashion, beauty, home goods, and general retail brands. See our e-commerce work and process.',
+    metaDescription: 'calderforge builds Shopify stores, retail websites, and performance marketing for fashion, beauty, home goods, and general retail brands. See our e-commerce work and process.',
     heroDescription: 'We build storefronts and run the marketing behind them — for fashion, beauty, home goods, and retail brands that need every visitor to have a reason to buy.',
     overview: 'Retail and e-commerce brands live or die on conversion rate, page speed, and repeat purchase behavior. We build Shopify and custom storefronts with fast checkout flows, product pages that answer objections before they are asked, and analytics wired in from day one — then pair the build with paid and organic marketing so the store has demand to convert.',
     deliverables: [
@@ -82,7 +82,7 @@ const industryGroups: IndustryGroup[] = [
     accent: '#b54708',
     keywords: ['construction', 'home improvement', 'building solutions', 'engineering', 'home services', 'pest control'],
     metaTitle: 'Web Development & Marketing for Construction and Home Services',
-    metaDescription: 'caldeforge builds websites and runs local marketing for construction firms, contractors, and home-service businesses. See our work in the trades and how we deliver it.',
+    metaDescription: 'calderforge builds websites and runs local marketing for construction firms, contractors, and home-service businesses. See our work in the trades and how we deliver it.',
     heroDescription: 'Contractors and home-service businesses win jobs on trust and speed of response. We build websites and marketing that make both obvious in the first ten seconds.',
     overview: 'A construction or home-services website has one job: convince a homeowner or project manager to pick up the phone. We build sites structured around service areas, past project proof, and clear calls to action, then run local and search marketing so the right jobs come in — not just traffic.',
     deliverables: [
@@ -116,7 +116,7 @@ const industryGroups: IndustryGroup[] = [
     accent: '#e04f5f',
     keywords: ['food', 'baking'],
     metaTitle: 'Web Development & Marketing for Restaurants and Food Brands',
-    metaDescription: 'caldeforge builds ordering-ready websites and runs social and marketing for restaurants, bakeries, and food brands. See our food and beverage work.',
+    metaDescription: 'calderforge builds ordering-ready websites and runs social and marketing for restaurants, bakeries, and food brands. See our food and beverage work.',
     heroDescription: 'Menus, ordering, and appetite appeal — built and marketed so a hungry visitor becomes a paying customer in a couple of taps.',
     overview: 'Food and beverage businesses convert on appetite and friction, not features. We build sites and ordering flows that load fast on mobile, present the menu clearly, and get out of the way between craving and checkout, then run the social presence that keeps the brand top of mind between visits.',
     deliverables: [
@@ -150,7 +150,7 @@ const industryGroups: IndustryGroup[] = [
     accent: '#0f9f8f',
     keywords: ['health', 'fitness', 'wellness', 'recovery', 'hair care'],
     metaTitle: 'Web Development & Marketing for Health and Wellness Brands',
-    metaDescription: 'caldeforge builds websites and marketing for fitness, recovery, and wellness brands. See our health and wellness work and how we approach the industry.',
+    metaDescription: 'calderforge builds websites and marketing for fitness, recovery, and wellness brands. See our health and wellness work and how we approach the industry.',
     heroDescription: 'Health and wellness buyers need clarity and trust before commitment. We build sites and campaigns that earn both without overselling.',
     overview: 'Wellness and fitness brands sell an outcome, not a product, which makes clarity and credibility the whole job. We build sites that explain the offer plainly, present proof (results, credentials, testimonials) prominently, and support booking or purchase without unnecessary steps, backed by marketing that reaches the right audience honestly.',
     deliverables: [
@@ -184,7 +184,7 @@ const industryGroups: IndustryGroup[] = [
     accent: '#155eef',
     keywords: ['real estate'],
     metaTitle: 'Web Development & Marketing for Real Estate Agents and Brokerages',
-    metaDescription: 'caldeforge builds listing-ready websites and marketing for real estate agents, brokerages, and property firms. See our real estate work and delivery process.',
+    metaDescription: 'calderforge builds listing-ready websites and marketing for real estate agents, brokerages, and property firms. See our real estate work and delivery process.',
     heroDescription: 'Listings, agent credibility, and lead capture — built into one site that works as hard as the agent does.',
     overview: 'A real estate site needs to make listings easy to browse, the agent or brokerage easy to trust, and inquiries easy to send. We build listing-driven sites with clean property pages and lead capture built in, then run marketing that puts new listings and the brand in front of the right local audience.',
     deliverables: [
@@ -218,7 +218,7 @@ const industryGroups: IndustryGroup[] = [
     accent: '#2e90fa',
     keywords: ['education', 'edtech', 'training', 'school'],
     metaTitle: 'Web Development & Marketing for Schools, Institutes and EdTech',
-    metaDescription: 'caldeforge builds enrollment-ready websites and platforms for schools, training institutes, and EdTech products. See our education work and process.',
+    metaDescription: 'calderforge builds enrollment-ready websites and platforms for schools, training institutes, and EdTech products. See our education work and process.',
     heroDescription: 'Enrollment, course discovery, and student trust — built into websites and platforms that turn interest into signups.',
     overview: 'Education and training businesses need to move a prospective student from curiosity to enrollment, often across multiple visits. We build course-discovery pages, enrollment flows, and — for EdTech products — the underlying platform, then automate the follow-up sequences that turn an inquiry into a signed-up student.',
     deliverables: [
@@ -252,7 +252,7 @@ const industryGroups: IndustryGroup[] = [
     accent: '#7f56d9',
     keywords: ['software development', 'ai tools', 'hosting', 'creator tools', 'cloud', 'developer tools', 'saas', 'hr tech', 'mobile application', 'wordpress themes'],
     metaTitle: 'Full-Stack Development for SaaS and Technology Products',
-    metaDescription: 'caldeforge builds SaaS platforms, developer tools, and AI products end to end — from MVP to scaled application. See our technology work and delivery process.',
+    metaDescription: 'calderforge builds SaaS platforms, developer tools, and AI products end to end — from MVP to scaled application. See our technology work and delivery process.',
     heroDescription: 'MVP to scaled product — we build the software, not just the marketing site around it.',
     overview: 'SaaS and technology products live and die on execution speed and product quality. We build MVPs and scaled platforms with React, Node.js, and modern infrastructure, own the architecture decisions, and keep iterating post-launch as usage and requirements evolve — with marketing automation and support tooling layered in as the product grows.',
     deliverables: [
@@ -286,7 +286,7 @@ const industryGroups: IndustryGroup[] = [
     accent: '#d6409f',
     keywords: ['marketing', 'branding', 'design', 'blogging', 'self improvement', 'wordpress / business', 'media'],
     metaTitle: 'Digital Marketing, Design and Video for Media and Creative Brands',
-    metaDescription: 'caldeforge delivers digital marketing, graphic design, and YouTube automation for agencies, creators, and media brands. See our marketing and creative work.',
+    metaDescription: 'calderforge delivers digital marketing, graphic design, and YouTube automation for agencies, creators, and media brands. See our marketing and creative work.',
     heroDescription: 'Audience growth, brand identity, and content that compounds — for agencies, creators, and media brands.',
     overview: 'Marketing, media, and creator businesses need output that is both fast and on-brand, across channels. We run campaign management, design systems, and video/content production so a brand shows up consistently everywhere it needs to — without every asset going through a bottleneck.',
     deliverables: [
@@ -320,7 +320,7 @@ const industryGroups: IndustryGroup[] = [
     accent: '#667085',
     keywords: ['hr &', 'hiring', 'consultancy', 'consulting', 'trading education', 'trade body', 'web development', 'web maintenance', 'fintech', 'forex'],
     metaTitle: 'Web Development & Marketing for Consulting and Professional Services',
-    metaDescription: 'caldeforge builds websites, platforms, and marketing for recruitment, consulting, fintech, and B2B service firms. See our professional services work.',
+    metaDescription: 'calderforge builds websites, platforms, and marketing for recruitment, consulting, fintech, and B2B service firms. See our professional services work.',
     heroDescription: 'Credibility, lead qualification, and clear positioning — built for firms whose next client finds them through research, not impulse.',
     overview: 'Professional and B2B service buyers research before they ever reach out, so the site has to establish credibility and pre-qualify the inquiry before a conversation starts. We build sites and, where needed, internal platforms that present expertise clearly and route serious inquiries efficiently, backed by marketing automation that nurtures longer B2B sales cycles.',
     deliverables: [
@@ -354,7 +354,7 @@ const industryGroups: IndustryGroup[] = [
     accent: '#ef6820',
     keywords: ['hotel', 'travel', 'trade shows', 'attractions', 'transportation'],
     metaTitle: 'Web Development & Marketing for Hotels, Venues and Events',
-    metaDescription: 'caldeforge builds booking-ready websites and marketing for hotels, venues, and event organizers. See our travel and hospitality work.',
+    metaDescription: 'calderforge builds booking-ready websites and marketing for hotels, venues, and event organizers. See our travel and hospitality work.',
     heroDescription: 'Bookings and turnout are the whole game — we build sites and campaigns aimed directly at both.',
     overview: 'Hospitality and events businesses succeed on booking conversion and turnout, which depend on visual presentation, trust signals, and timely marketing. We build booking-ready sites with strong visual storytelling and run the campaigns that drive awareness ahead of key dates.',
     deliverables: [
@@ -388,7 +388,7 @@ const industryGroups: IndustryGroup[] = [
     accent: '#12b76a',
     keywords: ['auto', 'automotive', 'trucking'],
     metaTitle: 'Web Development & Marketing for Automotive Businesses',
-    metaDescription: 'caldeforge builds websites, online stores, and local marketing for repair shops, detailers, and automotive lifestyle brands. See our automotive work.',
+    metaDescription: 'calderforge builds websites, online stores, and local marketing for repair shops, detailers, and automotive lifestyle brands. See our automotive work.',
     heroDescription: 'Local trust and parts or service discovery — built into sites and marketing tuned for the automotive buyer.',
     overview: 'Automotive businesses range from local service shops to lifestyle product brands, and each needs a different build: service shops need local trust and easy booking, product brands need a storefront that handles fitment and specs clearly. We build both, and run the local or performance marketing that brings customers in.',
     deliverables: [
@@ -422,7 +422,7 @@ const industryGroups: IndustryGroup[] = [
     accent: '#84cc16',
     keywords: ['coworking', 'community', 'productivity', 'lifestyle'],
     metaTitle: 'Web Development & Marketing for Coworking and Community Brands',
-    metaDescription: 'caldeforge builds websites and marketing for coworking spaces, community initiatives, and lifestyle brands. See our community and lifestyle work.',
+    metaDescription: 'calderforge builds websites and marketing for coworking spaces, community initiatives, and lifestyle brands. See our community and lifestyle work.',
     heroDescription: 'Membership, community trust, and brand identity — built for spaces and initiatives that grow through word of mouth and visibility.',
     overview: 'Coworking spaces and community-driven brands grow through visibility and trust as much as advertising. We build sites that make membership or participation an easy decision, and run the social presence that keeps a community engaged between events or sign-up cycles.',
     deliverables: [

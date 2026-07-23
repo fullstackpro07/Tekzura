@@ -112,11 +112,11 @@ export default function PortfolioStats() {
   }, [reduceMotion]);
 
   return (
-    <section className="portfolio-stats-section" id="portfolio-stats" aria-label="caldeforge portfolio statistics">
+    <section className="portfolio-stats-section" id="portfolio-stats" aria-label="calderforge portfolio statistics">
       <div className="container" ref={ref}>
         <div className="portfolio-stats-heading">
           
-          <h2 className="section-title">Why Choose caldeforge?</h2>
+          <h2 className="section-title">Why Choose calderforge?</h2>
           <p>This highlights our skills, experience, and quality of work, demonstrating our commitment to excellence.</p>
         </div>
         <div className="portfolio-stats-panel">
@@ -140,7 +140,7 @@ export default function PortfolioStats() {
     
           <h2 className="client-brand-eyebrow">Backed by brands who came back for more</h2>
           <p className="client-brand-desc">
-            caldeforge is trusted by over {Math.floor(portfolioStats.trustedClients / 100) * 100}+ clients in over {portfolioStats.countries}+ countries.
+            calderforge is trusted by over {Math.floor(portfolioStats.trustedClients / 100) * 100}+ clients in over {portfolioStats.countries}+ countries.
           </p>
         </div>
         <div className="client-brand-marquee">

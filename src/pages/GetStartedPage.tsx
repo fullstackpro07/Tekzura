@@ -16,7 +16,7 @@ export default function GetStartedPage() {
     <>
       <Seo
         title="Get Started"
-        description="Start your project with caldeforge. Tell us what you are building and we will map the fastest path from idea to launch and growth."
+        description="Start your project with calderforge. Tell us what you are building and we will map the fastest path from idea to launch and growth."
         path="/get-started"
       />
       <PageHero

@@ -6,7 +6,7 @@ export const homeFaqs = [
     answer: 'After a focused discovery call, we confirm the scope, delivery team, milestones, and earliest practical start date.',
   },
   {
-    question: 'Can caldeforge work with our existing team and systems?',
+    question: 'Can calderforge work with our existing team and systems?',
     answer: 'Yes. We can own a defined workstream or collaborate with internal product, marketing, and operations teams using your existing tools.',
   },
   {
@@ -23,9 +23,9 @@ export const homeFaqs = [
   },
 ];
 
-export const homePageTitle = 'caldeforge |  Where strategy meets execution & ideas become assets.';
+export const homePageTitle = 'calderforge |  Where strategy meets execution & ideas become assets.';
 export const homePageDescription =
-  'caldeforge is a full-stack development and AI growth studio building websites, apps, automation, and marketing systems that turn ideas into scalable products.';
+  'calderforge is a full-stack development and AI growth studio building websites, apps, automation, and marketing systems that turn ideas into scalable products.';
 export const homePageH1 = 'Where strategy meets execution — and ideas become assets.';
 
 export function buildHomeSchema() {
@@ -42,7 +42,7 @@ export function buildHomeSchema() {
         url: siteConfig.url,
         email: siteConfig.email,
         telephone: siteConfig.phone,
-        logo: `${siteConfig.url}/caldeforge-logo.png`,
+        logo: `${siteConfig.url}/calderforge-logo.png`,
         address: {
           '@type': 'PostalAddress',
           addressLocality: 'Bahawalpur',

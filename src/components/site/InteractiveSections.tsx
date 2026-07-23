@@ -65,7 +65,7 @@ function ServiceDashboardVisual({ service }: { service: Service }) {
         <div className="dashboard-workspace">
           {slug === 'full-stack-dev' && (
             <div className="web-product-preview">
-              <div className="mini-toolbar"><span>caldeforge.dev</span><i>Desktop</i><i>Mobile</i></div>
+              <div className="mini-toolbar"><span>calderforge.dev</span><i>Desktop</i><i>Mobile</i></div>
               <div className="mini-browser">
                 <div><small>Digital product</small><strong>Build a faster way forward.</strong><span /><span /><button type="button" tabIndex={-1}>Start a project</button></div>
                 <aside><i /><i /><i /></aside>
@@ -372,7 +372,7 @@ export function CapabilityExplorer({ variant = 'directory' }: { variant?: 'direc
             <SectionHeading
               eyebrow={ ''}
               title={ 'Services we offer'}
-              description={'Select a capability to see how caldeforge connects delivery work with the result your team needs.'}
+              description={'Select a capability to see how calderforge connects delivery work with the result your team needs.'}
             />
             <PackageBuilderButton label="Build custom package" variant="primary" />
           </div>
@@ -380,7 +380,7 @@ export function CapabilityExplorer({ variant = 'directory' }: { variant?: 'direc
         {variant === 'dashboard' ? (
           <>
             <div className="capability-dashboard capability-dashboard-desktop">
-              <div className="dashboard-tabs" role="tablist" aria-label="caldeforge services">
+              <div className="dashboard-tabs" role="tablist" aria-label="calderforge services">
                 {services.map((service, index) => {
                   const ServiceIcon = service.icon;
                   return (
@@ -436,7 +436,7 @@ export function CapabilityExplorer({ variant = 'directory' }: { variant?: 'direc
               <div>{active.technologies.slice(0, 4).map((tech) => <small key={tech}>{tech}</small>)}</div>
             </div>
           </div>
-          <div className="service-directory-list" aria-label="caldeforge services">
+          <div className="service-directory-list" aria-label="calderforge services">
             {services.map((service, index) => {
               const ServiceIcon = service.icon;
               return (
@@ -618,7 +618,7 @@ function DeliveryProcessPanel({
 
 export function StudioDeliveryProcess({
   eyebrow = '',
-  title = 'How every caldeforge engagement moves forward',
+  title = 'How every calderforge engagement moves forward',
   description = 'From first conversation to launch and beyond, each project follows the same visible stages — with decisions, progress, and ownership kept close to the business goal.',
   stageDetails,
   className = '',
@@ -660,7 +660,7 @@ export function StudioDeliveryProcess({
             active={active}
             slug={slug}
             icon={Workflow}
-            contextLabel="caldeforge Studio"
+            contextLabel="calderforge Studio"
             details={stageDetails}
           />
         </div>

@@ -10,7 +10,7 @@ export default function IndustriesPage() {
     <>
       <Seo
         title="Industries"
-        description={`caldeforge has delivered ${industriesStats.totalProjects}+ projects across ${industriesStats.totalIndustries} industries — e-commerce, construction, education, healthcare, real estate, SaaS, and more.`}
+        description={`calderforge has delivered ${industriesStats.totalProjects}+ projects across ${industriesStats.totalIndustries} industries — e-commerce, construction, education, healthcare, real estate, SaaS, and more.`}
         path="/industries"
       />
       <PageHero

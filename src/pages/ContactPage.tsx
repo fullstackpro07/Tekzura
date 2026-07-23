@@ -9,7 +9,7 @@ export default function ContactPage() {
     <>
       <Seo
         title="Contact"
-        description="Book a strategy call or contact caldeforge about web development, e-commerce, automation, marketing, and digital operations."
+        description="Book a strategy call or contact calderforge about web development, e-commerce, automation, marketing, and digital operations."
         path="/contact"
       />
       
@@ -29,7 +29,7 @@ export default function ContactPage() {
           </div>
           <LeadForm
             source="contact"
-            ariaLabel="Contact caldeforge"
+            ariaLabel="Contact calderforge"
             submitLabel="Send Contact Request"
             successTitle="Thanks — your message has been sent."
             successMessage="We have received your message and will reply within one business day."

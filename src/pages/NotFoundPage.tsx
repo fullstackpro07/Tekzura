@@ -7,7 +7,7 @@ export default function NotFoundPage() {
     <>
       <Seo
         title="Page Not Found"
-        description="The requested caldeforge page could not be found."
+        description="The requested calderforge page could not be found."
         path="/404"
         noIndex
       />

@@ -157,7 +157,7 @@ p { color: var(--text); line-height: 1.72; }
 .desktop-nav a::after { position: absolute; right: 0; bottom: -1px; left: 0; height: 2px; content: ""; background: var(--blue); transform: scaleX(0); transition: transform 180ms ease; }
 .desktop-nav a:hover, .desktop-nav a.active { color: var(--blue); }
 .desktop-nav a.active::after { transform: scaleX(1); }
-.header-chat-link { display: inline-flex; align-items: center; gap: 7px; margin-left: 8px; padding: 11px 18px; color: var(--ink); font: inherit; font-size: .9rem; font-weight: 600; background: transparent; border: 1px solid var(--border); border-radius: 8px; cursor: pointer; transition: border-color 160ms ease, color 160ms ease, background 160ms ease; }
+.header-chat-link { display: inline-flex; align-items: center; gap: 7px; margin-left: 8px; padding: 11px 18px; color: var(--ink); font: inherit; font-size: .9rem; font-weight: 600; white-space: nowrap; background: transparent; border: 1px solid var(--border); border-radius: 8px; cursor: pointer; transition: border-color 160ms ease, color 160ms ease, background 160ms ease; }
 .header-chat-link:hover { color: var(--blue); border-color: color-mix(in srgb, var(--blue) 40%, var(--border)); background: color-mix(in srgb, var(--blue) 6%, var(--white)); box-shadow: 0 12px 24px rgba(21, 94, 239, 0.24); }
 .header-chat-link svg { width: 17px; height: 17px; }
 .header-cta { margin-left: 8px; }
@@ -179,6 +179,7 @@ p { color: var(--text); line-height: 1.72; }
   cursor: pointer;
   font-size: 0.94rem;
   font-weight: 700;
+  white-space: nowrap;
   transition: color 180ms ease, background-color 180ms ease, border-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
 }
 .button svg { width: 18px; height: 18px; }
@@ -393,7 +394,7 @@ p { color: var(--text); line-height: 1.72; }
 .step-number { position: absolute; top: 28px; right: 28px; color: #98a2b3; font-variant-numeric: tabular-nums; font-weight: 700; }
 .value-grid { grid-template-columns: repeat(4, 1fr); }
 
-.why-caldeforge-section .value-grid { margin-bottom: 28px; }
+.why-calderforge-section .value-grid { margin-bottom: 28px; }
 .ownership-band { display: grid; grid-template-columns: 1fr 1.1fr; gap: 40px; align-items: center; padding: 36px 40px; background: var(--ink); border-radius: 12px; color: var(--white); }
 .ownership-copy h3 { color: var(--white); }
 .ownership-copy p { color: #c7d1df; margin-bottom: 0; }
@@ -572,14 +573,14 @@ p { color: var(--text); line-height: 1.72; }
 .split-layout, .two-column, .faq-layout, .delivery-band { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 80px; }
 .prose-large p { font-size: 1.08rem; }
 
-.about-hero { position: relative; min-height: 720px; display: flex; align-items: flex-end; overflow: hidden; color: var(--white); background: #08111f; }
+.about-hero { position: relative; min-height: 560px; display: flex; align-items: flex-end; overflow: hidden; color: var(--white); background: #08111f; }
 .about-hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; filter: saturate(.9) contrast(1.05); transform: scale(1.02); }
 .about-hero-overlay { position: absolute; inset: 0; background:
   radial-gradient(circle at 78% 18%, rgba(21,94,239,.34), transparent 34%),
   linear-gradient(90deg, rgba(8,17,31,.96) 0%, rgba(8,17,31,.84) 36%, rgba(8,17,31,.58) 68%, rgba(8,17,31,.35) 100%),
   linear-gradient(180deg, rgba(8,17,31,.22) 0%, rgba(8,17,31,.98) 100%);
 }
-.about-hero-inner { position: relative; z-index: 1; padding: 128px 0 82px; }
+.about-hero-inner { position: relative; z-index: 1; padding: 88px 0 60px; }
 .about-hero-inner h1 { max-width: 900px; margin-bottom: 22px; color: var(--white); font-size: clamp(2.8rem, 6vw, 5.2rem); line-height: .98; letter-spacing: -.055em; }
 .about-hero-inner > p:not(.eyebrow) { max-width: 720px; margin-bottom: 30px; color: #d5e1ef; font-size: clamp(1.05rem, 1.8vw, 1.22rem); line-height: 1.68; }
 .about-hero .button-row { margin-bottom: 34px; }
@@ -1557,11 +1558,11 @@ p { color: var(--text); line-height: 1.72; }
 .chat-fab:hover::before { opacity: 1; }
 .chat-fab:focus-visible { outline: 2px solid var(--lime); outline-offset: 2px; }
 
-.caldeforge-chat-avatar { display: block; flex-shrink: 0; object-fit: contain; user-select: none; -webkit-user-drag: none; }
-.caldeforge-chat-avatar-fab { width: 38px; height: 38px; }
-.caldeforge-chat-avatar-header { width: 44px; height: 44px; }
-.caldeforge-chat-avatar-hero { width: 76px; height: 76px; filter: drop-shadow(0 14px 28px rgba(21,94,239,.24)); }
-.caldeforge-chat-avatar-message { width: 24px; height: 24px; }
+.calderforge-chat-avatar { display: block; flex-shrink: 0; object-fit: contain; user-select: none; -webkit-user-drag: none; }
+.calderforge-chat-avatar-fab { width: 38px; height: 38px; }
+.calderforge-chat-avatar-header { width: 44px; height: 44px; }
+.calderforge-chat-avatar-hero { width: 76px; height: 76px; filter: drop-shadow(0 14px 28px rgba(21,94,239,.24)); }
+.calderforge-chat-avatar-message { width: 24px; height: 24px; }
 
 /* Backdrop */
 .chat-backdrop { position: absolute; inset: 0; z-index: 244; background: rgba(8,17,31,.48); backdrop-filter: blur(4px); animation: chat-fade 200ms ease both; }
@@ -1697,7 +1698,7 @@ body.chat-lock { overflow: hidden; }
   .talk-fab { width: 54px; height: 54px; bottom: calc(max(16px, env(safe-area-inset-bottom, 0px)) + 66px); border-radius: 17px; }
   .talk-fab svg { width: 24px; height: 24px; }
   .chat-fab { width: 54px; height: 54px; padding: 0; border-radius: 17px; }
-  .caldeforge-chat-avatar-fab { width: 37px; height: 37px; }
+  .calderforge-chat-avatar-fab { width: 37px; height: 37px; }
   .chat-panel,
   .chat-panel.is-expanded { inset: 0; right: 0; left: 0; bottom: 0; width: 100%; max-width: none; height: 100%; max-height: none; border: 0; border-radius: 0; transform-origin: bottom center; animation: chat-panel-mobile-in 220ms cubic-bezier(.25,.8,.25,1) both; }
   @keyframes chat-panel-mobile-in { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
@@ -1752,8 +1753,8 @@ body.chat-lock { overflow: hidden; }
   .case-card-featured { grid-template-columns: 1fr; }
   .case-card-featured .case-visual { min-height: 400px; }
   .case-grid-insights { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .about-hero { min-height: 650px; }
-  .about-hero-inner { padding: 110px 0 70px; }
+  .about-hero { min-height: 520px; }
+  .about-hero-inner { padding: 80px 0 60px; }
   .about-hero-inner h1 { max-width: 780px; }
   .founder-layout { gap: 48px; }
   .footer-grid { grid-template-columns: 1.4fr 0.8fr 1fr; }
@@ -1863,13 +1864,13 @@ body.chat-lock { overflow: hidden; }
   .testimonial-stack-card { width: min(68%, 450px); min-height: 405px; }
   .page-hero { padding: 76px 0 68px; }
   .page-hero-inner { min-width: 0; margin-inline: 0; }
-  .about-hero { min-height: 620px; align-items: flex-end; }
+  .about-hero { min-height: 480px; align-items: flex-end; }
   .about-hero-bg { object-position: 58% center; }
   .about-hero-overlay { background:
     linear-gradient(180deg, rgba(8,17,31,.28) 0%, rgba(8,17,31,.96) 58%, rgba(8,17,31,1) 100%),
     linear-gradient(90deg, rgba(8,17,31,.92), rgba(8,17,31,.45));
   }
-  .about-hero-inner { padding: 104px 0 58px; }
+  .about-hero-inner { padding: 72px 0 48px; }
   .about-hero-inner h1 { font-size: clamp(2.55rem, 12vw, 4rem); }
   .about-hero-proof { align-items: stretch; flex-direction: column; max-width: 360px; }
   .about-hero-proof span { width: 100%; }
