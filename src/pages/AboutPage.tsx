@@ -115,7 +115,7 @@ export default function AboutPage() {
 
           <h2 id="about-hero-title">calderforge builds the digital systems behind growing businesses.</h2>
           <p>
-            From Bahawalpur to global clients, calderforge brings product strategy, full-stack development, automation, AI workflows, and growth execution into one accountable studio.
+            For global clients, calderforge brings product strategy, full-stack development, automation, AI workflows, and growth execution into one accountable studio.
           </p>
           <div className="button-row">
             <Link className="button button-primary" to="/get-started">

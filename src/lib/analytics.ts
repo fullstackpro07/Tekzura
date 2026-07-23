@@ -1,5 +1,5 @@
 export const GTM_ID = 'GTM-5S497MK8';
-export const GA4_MEASUREMENT_ID = 'G-3F295E8E3Y';
+export const GA4_MEASUREMENT_ID = 'G-FJYQV4QKFL';
 
 type DataLayerEvent = Record<string, unknown>;
 

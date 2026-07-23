@@ -1,8 +1,6 @@
 /// <reference types="vite/client" />
 
 interface ImportMetaEnv {
-  /** Public Web3Forms access key used for lead-form email notifications. */
-  readonly VITE_WEB3FORMS_ACCESS_KEY?: string;
   /** Public Supabase project URL used for direct browser inserts. */
   readonly VITE_SUPABASE_URL?: string;
   /** Public Supabase anon key. RLS keeps browser access insert-only. */

@@ -18,12 +18,26 @@ export default function CaseStudyDetailPage() {
     new Date(`${study.date}T00:00:00`),
   );
 
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: study.title,
+    description: study.excerpt,
+    datePublished: study.date,
+    image: study.image ? `${siteConfig.url}${study.image}` : undefined,
+    author: { '@type': 'Organization', name: siteConfig.name },
+    publisher: { '@type': 'Organization', name: siteConfig.name, url: siteConfig.url },
+    mainEntityOfPage: `${siteConfig.url}/blog/${study.slug}`,
+  };
+
   return (
     <>
       <Seo
         title={study.title}
         description={study.excerpt}
         path={`/blog/${study.slug}`}
+        image={study.image}
+        schema={schema}
       />
 
       <section className={`article-hero ${study.image ? 'article-hero-cover' : ''}`}>

@@ -14,16 +14,7 @@ export interface LeadFields {
 
 export type LeadSource = 'get-started' | 'chatbot' | 'contact' | 'package-builder';
 
-const web3FormsAccessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY?.trim();
-const web3FormsEndpoint = 'https://api.web3forms.com/submit';
-const notificationEmail = siteConfig.email;
-
-const sourceLabel: Record<LeadSource, string> = {
-  'get-started': 'calderforge Get Started form',
-  chatbot: 'calderforge AI assistant',
-  contact: 'calderforge Contact form',
-  'package-builder': 'calderforge Package Builder',
-};
+const contactEndpoint = '/api/contact';
 
 export function isValidEmail(value: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
@@ -50,40 +41,22 @@ async function submitToSupabase(fields: LeadFields, source: LeadSource) {
   return { skipped: false };
 }
 
-async function submitToWeb3Forms(fields: LeadFields, source: LeadSource) {
-  if (!web3FormsAccessKey) return { skipped: true };
-
-  const response = await fetch(web3FormsEndpoint, {
+async function submitToContactApi(fields: LeadFields, source: LeadSource) {
+  const response = await fetch(contactEndpoint, {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-    body: JSON.stringify({
-      access_key: web3FormsAccessKey,
-      subject: `New lead — ${fields.service || 'General'} (${sourceLabel[source]})`,
-      to_email: notificationEmail,
-      notification_email: notificationEmail,
-      from_name: fields.name,
-      replyto: fields.email,
-      name: fields.name,
-      email: fields.email,
-      company: fields.company || '—',
-      service: fields.service || '—',
-      budget: fields.budget || '—',
-      timeline: fields.timeline || '—',
-      message: fields.message,
-      source: sourceLabel[source],
-      botcheck: '',
-    }),
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ fields, source, botcheck: '' }),
   });
 
-  const data = (await response.json().catch(() => null)) as { success?: boolean; message?: string } | null;
-  if (!response.ok || data?.success === false) {
-    throw new Error(data?.message || `Web3Forms request failed with status ${response.status}`);
+  const data = (await response.json().catch(() => null)) as { ok?: boolean; error?: string } | null;
+  if (!response.ok || !data?.ok) {
+    throw new Error(data?.error || `Contact email request failed with status ${response.status}`);
   }
 
   return { skipped: false };
 }
 
-/** Open a prefilled email so a lead is never lost when no service is configured. */
+/** Open a prefilled email so a lead is never lost if both delivery channels fail. */
 export function openMailtoFallback(fields: LeadFields) {
   const subject = `New project inquiry — ${fields.service || 'General'}`;
   const body = [
@@ -106,32 +79,29 @@ export interface LeadSubmitResult {
 }
 
 /**
- * Submit a lead to every configured channel (Web3Forms email + Supabase store).
- * When Web3Forms is configured, email delivery is required for success. With
- * nothing configured, opens a prefilled email as a last-resort fallback.
+ * Submit a lead via SMTP email (/api/contact) and Supabase storage in parallel.
+ * Email delivery is required for success. If both channels fail, opens a
+ * prefilled mailto as a last-resort fallback so a lead is never silently lost.
  */
 export async function submitLead(fields: LeadFields, source: LeadSource): Promise<LeadSubmitResult> {
-  if (!web3FormsAccessKey && !supabase) {
+  const [emailResult, supabaseResult] = await Promise.allSettled([
+    submitToContactApi(fields, source),
+    submitToSupabase(fields, source),
+  ]);
+
+  if (emailResult.status === 'rejected') console.warn('Contact email failed:', emailResult.reason);
+  if (supabaseResult.status === 'rejected') console.warn('Supabase lead insert failed:', supabaseResult.reason);
+
+  const emailSucceeded = emailResult.status === 'fulfilled';
+  const supabaseSucceeded = supabaseResult.status === 'fulfilled' && !supabaseResult.value.skipped;
+
+  if (!emailSucceeded && !supabaseSucceeded) {
     openMailtoFallback(fields);
     return { ok: true, usedFallback: true };
   }
 
-  const [web3Result, supabaseResult] = await Promise.allSettled([
-    submitToWeb3Forms(fields, source),
-    submitToSupabase(fields, source),
-  ]);
-
-  if (web3Result.status === 'rejected') console.warn('Web3Forms notification failed:', web3Result.reason);
-  if (supabaseResult.status === 'rejected') console.warn('Supabase lead insert failed:', supabaseResult.reason);
-
-  const web3Succeeded = web3Result.status === 'fulfilled' && !web3Result.value.skipped;
-  const supabaseSucceeded = supabaseResult.status === 'fulfilled' && !supabaseResult.value.skipped;
-
-  // If Web3Forms is configured, email delivery is required. Supabase storage
-  // alone should not show a success state because the user expects an email.
-  const ok = web3FormsAccessKey ? web3Succeeded : supabaseSucceeded;
-  if (ok) trackContactFormSubmission(source);
-  return { ok, usedFallback: false };
+  if (emailSucceeded) trackContactFormSubmission(source);
+  return { ok: emailSucceeded, usedFallback: false };
 }
 
 export interface PackageQuoteFields {

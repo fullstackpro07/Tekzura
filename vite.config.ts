@@ -6,6 +6,7 @@ import { industrySummaries } from './src/content/industries';
 import { insightCaseStudies } from './src/content/insights';
 import { services, siteConfig } from './src/content/site';
 import { DEFAULT_MODEL, generateChatReply, sanitizeContext, sanitizeMessages } from './api/lib/gemini';
+import { sanitizeContactFields, sanitizeSource, sendContactEmail } from './api/lib/mailer';
 
 // Dev-only handler that mirrors the Vercel /api/chat Edge function so the
 // chatbot works under `npm run dev` without needing `vercel dev`.
@@ -42,6 +43,50 @@ function chatDevApi(env: Record<string, string>): PluginOption {
           (env.GEMINI_MODEL || DEFAULT_MODEL).trim(),
         );
         send(result.status, result.body);
+      });
+    },
+  };
+}
+
+// Dev-only handler that mirrors the Vercel /api/contact Node function so the
+// contact form sends real SMTP email under `npm run dev`.
+function contactDevApi(env: Record<string, string>): PluginOption {
+  return {
+    name: 'calderforge-contact-dev-api',
+    configureServer(server) {
+      server.middlewares.use('/api/contact', async (req, res) => {
+        const send = (status: number, body: unknown) => {
+          res.statusCode = status;
+          res.setHeader('Content-Type', 'application/json');
+          res.end(JSON.stringify(body));
+        };
+
+        if (req.method !== 'POST') return send(405, { error: 'Method not allowed' });
+
+        let raw = '';
+        for await (const chunk of req) raw += chunk;
+
+        let payload: { fields?: unknown; source?: unknown; botcheck?: unknown };
+        try {
+          payload = JSON.parse(raw || '{}');
+        } catch {
+          return send(400, { error: 'Invalid JSON body.' });
+        }
+
+        if (String(payload.botcheck || '').trim()) return send(200, { ok: true });
+
+        const fields = sanitizeContactFields(payload.fields);
+        if (!fields) return send(400, { error: 'Missing or invalid required fields.' });
+
+        const result = await sendContactEmail(fields, sanitizeSource(payload.source), {
+          SMTP_HOST: env.SMTP_HOST || process.env.SMTP_HOST,
+          SMTP_PORT: env.SMTP_PORT || process.env.SMTP_PORT,
+          SMTP_SECURE: env.SMTP_SECURE || process.env.SMTP_SECURE,
+          SMTP_USER: env.SMTP_USER || process.env.SMTP_USER,
+          SMTP_PASS: env.SMTP_PASS || process.env.SMTP_PASS,
+          CONTACT_TO_EMAIL: env.CONTACT_TO_EMAIL || process.env.CONTACT_TO_EMAIL,
+        });
+        send(result.ok ? 200 : 502, result);
       });
     },
   };
@@ -92,7 +137,7 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '');
 
   return {
-    plugins: [react(), chatDevApi(env), sitemapPlugin()],
+    plugins: [react(), chatDevApi(env), contactDevApi(env), sitemapPlugin()],
     build: {
       target: 'es2020',
       outDir: 'build',
