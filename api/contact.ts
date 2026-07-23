@@ -11,7 +11,7 @@
 //   ALLOWED_ORIGINS (comma-separated; leave unset for same-origin only)
 
 import type { IncomingMessage, ServerResponse } from 'node:http';
-import { sanitizeContactFields, sanitizeSource, sendContactEmail } from './lib/mailer';
+import { sanitizeContactFields, sanitizeSource, sendContactEmail } from './lib/mailer.js';
 
 function readAllowedOrigins() {
   return (process.env.ALLOWED_ORIGINS || '')
