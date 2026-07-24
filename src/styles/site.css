@@ -215,7 +215,7 @@ p { color: var(--text); line-height: 1.72; }
 @keyframes hero-settle { from { opacity: .5; transform: scale(1.025); } to { opacity: 1; transform: scale(1); } }
 .home-hero-grid { display: grid; min-height: 0; grid-template-columns: 1.08fr 0.92fr; align-items: center; gap: 72px; }
 .home-hero-grid > *, .split-layout > *, .two-column > *, .contact-layout > *, .footer-grid > * { min-width: 0; }
-.hero-copy h1 { max-width: 760px; }
+.hero-copy h1 { max-width: 760px; margin-bottom: 16px; font-size: clamp(2rem, 3.5vw, 2.75rem); line-height: 1.16; font-weight: 700; }
 .immersive-hero .hero-copy { animation: hero-copy-in 650ms 120ms ease both; }
 .immersive-hero .hero-copy h1 { max-width: 780px; color: white; }
 .immersive-hero .hero-copy .lead { color: #cbd7e8; }

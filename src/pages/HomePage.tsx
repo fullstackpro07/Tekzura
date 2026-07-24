@@ -24,7 +24,7 @@ export default function HomePage() {
         <div className="container home-hero-grid">
           <div className="hero-copy">
 
-            <h2>{homePageH1}</h2>
+            <h1>{homePageH1}</h1>
             <p className="lead">
               calderforge transforms ideas into launch-ready assets with strategy, engineering, and marketing under one roof.
             </p>
