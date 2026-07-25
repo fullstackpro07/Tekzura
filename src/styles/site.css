@@ -652,11 +652,11 @@ p { color: var(--text); line-height: 1.72; }
 .team-section-about { background: linear-gradient(180deg, #ffffff 0%, #f7faff 100%); border-top: 1px solid var(--border); }
 .team-section-about .section-heading { margin-bottom: 36px; }
 .team-groups-about { gap: 0; }
-.team-gallery-about { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; max-width: 780px; margin-inline: auto; }
+.team-gallery.team-gallery-about { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; max-width: 1046px; margin-inline: auto; }
 .team-gallery-about > .reveal { min-width: 0; }
 .team-gallery-about > .reveal > .team-profile { width: 100%; }
-/* Lone last-row card sits in the middle column (2nd of 3) */
-.team-gallery-about > .reveal:last-child:nth-last-child(1):nth-child(3n + 1) { grid-column: 2; }
+/* Lone last-row card sits in the 2nd column of 4 */
+.team-gallery-about > .reveal:last-child:nth-last-child(1):nth-child(4n + 1) { grid-column: 2; }
 .team-profile.is-about { display: flex; flex-direction: column; height: 100%; overflow: hidden; background: var(--white); border: 1px solid var(--border); border-radius: 12px; box-shadow: 0 8px 24px rgba(15,39,72,.04); transition: border-color 180ms ease, box-shadow 180ms ease; }
 .team-profile.is-about:hover { border-color: #b0c0d4; box-shadow: 0 14px 36px rgba(15,39,72,.08); transform: none; }
 .team-photo-md { position: relative; width: 100%; aspect-ratio: 1 / 1; overflow: hidden; background: linear-gradient(145deg, #e8edf4, #f7faff); }
@@ -1748,7 +1748,7 @@ body.chat-lock { overflow: hidden; }
   .value-grid { grid-template-columns: repeat(2, 1fr); }
   .about-stats-grid, .about-pillar-grid, .about-why-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .about-capability-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .team-gallery-about { max-width: none; }
+  .team-gallery-about { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: none; }
   .about-company-grid, .about-model-grid, .about-standards-grid { grid-template-columns: 1fr; gap: 42px; }
   .case-card-featured { grid-template-columns: 1fr; }
   .case-card-featured .case-visual { min-height: 400px; }
