@@ -13,6 +13,7 @@ build/
 !public/favicon.png
 !public/chatbot/avatar.png
 !public/next step.png
+!public/calderforge-service-icons/*.png
 !design-assets/logo-original.png
 branch_structure.json
 temp_auto_push.bat
