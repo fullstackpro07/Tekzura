@@ -400,7 +400,7 @@ export const team: TeamMember[] = [
   },
   {
     name: 'Muhammad Rashid',
-    role: 'Research Assistant',
+    role: 'HR & Operations Manager',
     image: '/team/muhammad-rashid.webp',
     width: 720,
     height: 840,
