@@ -13,7 +13,6 @@ export default function ServiceDetailPage() {
   if (!service) return <NotFoundPage />;
 
   const relatedWork = caseStudies.filter((item) => item.service === service.slug).slice(0, 1);
-  const Icon = service.icon;
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'Service',
@@ -44,7 +43,7 @@ export default function ServiceDetailPage() {
 
       <section className="section service-overview-section">
         <div className="container problem-grid">
-          <div className="service-icon-large"><Icon aria-hidden="true" /></div>
+          <div className="service-icon-large"><img src={service.iconImage} alt="" /></div>
           <article><p className="eyebrow">Challenge</p><h2>What this fixes</h2><p>{service.problem}</p></article>
           <article><p className="eyebrow">Outcome</p><h2>What you gain</h2><p>{service.outcome}</p></article>
         </div>

@@ -48,8 +48,8 @@ export function Reveal({
 }
 
 function ServiceDashboardVisual({ service }: { service: Service }) {
-  const Icon = service.icon;
   const slug = service.slug;
+  const Icon = service.icon;
 
   return (
     <div className={`service-dashboard-ui dashboard-${slug}`} aria-label={`${service.title} interactive dashboard preview`}>
@@ -59,7 +59,7 @@ function ServiceDashboardVisual({ service }: { service: Service }) {
       </div>
       <div className="dashboard-app">
         <aside>
-          <span className="dashboard-app-logo"><Icon aria-hidden="true" /></span>
+          <span className="dashboard-app-logo"><img src={service.iconImage} alt="" /></span>
           {service.technologies.slice(0, 4).map((tech, index) => <i key={tech} className={index === 0 ? 'active' : ''} title={tech} />)}
         </aside>
         <div className="dashboard-workspace">
@@ -276,14 +276,12 @@ function ServiceDashboardCopy({ service }: { service: Service }) {
 }
 
 function ServiceDirectoryMobilePanel({ service }: { service: Service }) {
-  const Icon = service.icon;
-
   return (
     <div className="service-directory-mobile-panel">
       <div className="service-directory-mobile-visual">
         <img src={service.image} alt={service.imageAlt} width="1200" height="800" loading="lazy" />
         <div className="service-directory-shade" aria-hidden="true" />
-        <div className="service-directory-badge"><Icon aria-hidden="true" /><span>{service.eyebrow}</span></div>
+        <div className="service-directory-badge"><img src={service.iconImage} alt="" /><span>{service.eyebrow}</span></div>
       </div>
       <h3>{service.title}</h3>
       <p>{service.summary}</p>
@@ -346,7 +344,6 @@ function ServicesMobileAccordion({
 export function CapabilityExplorer({ variant = 'directory' }: { variant?: 'directory' | 'dashboard' }) {
   const [activeSlug, setActiveSlug] = useState<ServiceSlug>('full-stack-dev');
   const active = services.find((service) => service.slug === activeSlug)!;
-  const Icon = active.icon;
 
   function select(slug: ServiceSlug, updateHash = false) {
     setActiveSlug(slug);
@@ -382,7 +379,6 @@ export function CapabilityExplorer({ variant = 'directory' }: { variant?: 'direc
             <div className="capability-dashboard capability-dashboard-desktop">
               <div className="dashboard-tabs" role="tablist" aria-label="calderforge services">
                 {services.map((service, index) => {
-                  const ServiceIcon = service.icon;
                   return (
                     <button
                       key={service.slug}
@@ -404,7 +400,7 @@ export function CapabilityExplorer({ variant = 'directory' }: { variant?: 'direc
                         }
                       }}
                     >
-                      <ServiceIcon aria-hidden="true" />
+                      <img src={service.iconImage} alt="" />
                       <span><strong>{service.shortTitle}</strong><small>{service.eyebrow}</small></span>
                       <ChevronRight aria-hidden="true" />
                     </button>
@@ -429,7 +425,7 @@ export function CapabilityExplorer({ variant = 'directory' }: { variant?: 'direc
           <div className="service-directory-visual" key={active.slug}>
             <img src={active.image} alt={active.imageAlt} width="1200" height="800" loading="lazy" />
             <div className="service-directory-shade" aria-hidden="true" />
-            <div className="service-directory-badge"><Icon aria-hidden="true" /><span>{active.eyebrow}</span></div>
+            <div className="service-directory-badge"><img src={active.iconImage} alt="" /><span>{active.eyebrow}</span></div>
             <div className="service-directory-outcome">
               <span>Designed outcome</span>
               <strong>{active.outcome}</strong>
@@ -438,7 +434,6 @@ export function CapabilityExplorer({ variant = 'directory' }: { variant?: 'direc
           </div>
           <div className="service-directory-list" aria-label="calderforge services">
             {services.map((service, index) => {
-              const ServiceIcon = service.icon;
               return (
                 <Link
                   key={service.slug}
@@ -449,7 +444,7 @@ export function CapabilityExplorer({ variant = 'directory' }: { variant?: 'direc
                   onClick={() => select(service.slug, true)}
                 >
                   <span className="service-directory-number">{String(index + 1).padStart(2, '0')}</span>
-                  <span className="service-directory-icon"><ServiceIcon aria-hidden="true" /></span>
+                  <span className="service-directory-icon"><img src={service.iconImage} alt="" /></span>
                   <span className="service-directory-copy">
                     <strong>{service.shortTitle}</strong>
                     <small>{service.summary}</small>
@@ -560,13 +555,15 @@ function DeliveryProcessPanel({
   active,
   slug,
   icon: Icon,
+  iconImage,
   contextLabel,
   details,
 }: {
   stages: string[];
   active: number;
   slug: string;
-  icon: typeof Workflow;
+  icon?: typeof Workflow;
+  iconImage?: string;
   contextLabel: string;
   details?: ProcessStageDetail[];
 }) {
@@ -582,7 +579,9 @@ function DeliveryProcessPanel({
       key={`${slug}-${active}`}
     >
       <div className="service-process-copy">
-        <div className="service-process-icon"><Icon aria-hidden="true" /></div>
+        <div className="service-process-icon">
+          {iconImage ? <img src={iconImage} alt="" /> : Icon ? <Icon aria-hidden="true" /> : null}
+        </div>
         <p className="eyebrow">Stage {active + 1} of {stages.length}</p>
         <span>{detail.label}</span>
         <h3>{step}</h3>
@@ -599,7 +598,7 @@ function DeliveryProcessPanel({
       </div>
       <div className="service-process-visual" aria-hidden="true">
         <div className="service-process-orbit">
-          <span><Icon /></span>
+          <span>{iconImage ? <img src={iconImage} alt="" /> : Icon ? <Icon /> : null}</span>
           {stages.map((processStep, index) => (
             <i key={processStep} className={index <= active ? 'complete' : ''}>
               {index < active ? <Check /> : index + 1}
@@ -671,7 +670,6 @@ export function StudioDeliveryProcess({
 
 export function ServiceDeliveryProcess({ service }: { service: Service }) {
   const [active, setActive] = useState(0);
-  const Icon = service.icon;
 
   function moveStep(currentIndex: number, direction: number) {
     const nextIndex = (currentIndex + direction + service.process.length) % service.process.length;
@@ -700,7 +698,7 @@ export function ServiceDeliveryProcess({ service }: { service: Service }) {
             stages={service.process}
             active={active}
             slug={service.slug}
-            icon={Icon}
+            iconImage={service.iconImage}
             contextLabel={service.shortTitle}
           />
         </div>

@@ -69,7 +69,7 @@ export default function ServicesDropdown({ onNavigate }: ServicesDropdownProps) 
           <div className="services-dropdown-grid">
             {categoryServices.map((item) => {
               const meta = getServiceMeta(item.slug);
-              const Icon = meta?.icon ?? activeMeta.icon;
+              const CategoryIcon = activeMeta.icon;
               return (
                 <Link
                   key={item.slug}
@@ -79,7 +79,7 @@ export default function ServicesDropdown({ onNavigate }: ServicesDropdownProps) 
                 >
                   <div className="services-dropdown-card-top">
                     <span className="services-dropdown-card-icon" style={{ background: activeMeta.iconBg, color: activeMeta.iconColor }}>
-                      <Icon aria-hidden="true" />
+                      {meta ? <img src={meta.iconImage} alt="" /> : <CategoryIcon aria-hidden="true" />}
                     </span>
                     <strong>{item.shortTitle}</strong>
                   </div>

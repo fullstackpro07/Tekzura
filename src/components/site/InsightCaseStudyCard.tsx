@@ -11,7 +11,6 @@ export function InsightCaseStudyCard({
   index: number;
 }) {
   const service = services.find((entry) => entry.slug === item.service);
-  const ServiceIcon = service?.icon;
 
   return (
     <Link to={`/blog/${item.slug}`} className="case-card case-card-link">
@@ -20,9 +19,9 @@ export function InsightCaseStudyCard({
         <div className="case-visual-shade" aria-hidden="true" />
         <div className="case-visual-topline">
 
-          {ServiceIcon && (
+          {service && (
             <span className="case-service-icon">
-              <ServiceIcon aria-hidden="true" />
+              <img src={service.iconImage} alt="" />
             </span>
           )}
         </div>

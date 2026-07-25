@@ -2436,3 +2436,40 @@ body.chat-lock { overflow: hidden; }
   .client-brand-track { animation: none; }
   .client-brand-marquee { width: 100%; overflow-x: auto; }
 }
+
+/* --- Service icon images (calderforge-service-icons) --- */
+.case-service-icon img,
+.service-icon-large img,
+.service-process-icon img,
+.service-process-orbit > span img,
+.dashboard-app-logo img,
+.dashboard-tabs button > img:first-child,
+.service-directory-badge img,
+.service-directory-icon img,
+.services-dropdown-cat-icon img,
+.services-dropdown-card-icon img,
+.package-service-icon img,
+.package-summary-item span img,
+.package-summary-item.detailed span i img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 22%;
+  object-fit: cover;
+}
+.case-service-icon img { width: 26px; height: 26px; }
+.service-icon-large img { width: 64px; height: 64px; }
+.service-process-icon img { width: 34px; height: 34px; }
+.service-process-orbit > span img { width: 40px; height: 40px; }
+.dashboard-app-logo img { width: 20px; height: 20px; }
+.dashboard-tabs button > img:first-child { width: 24px; height: 24px; }
+.service-directory-badge img { width: 22px; height: 22px; flex-shrink: 0; }
+.service-directory-icon img { width: 26px; height: 26px; }
+.services-dropdown-cat-icon img { width: 22px; height: 22px; }
+.services-dropdown-card-icon img { width: 21px; height: 21px; }
+.package-service-icon img { width: 22px; height: 22px; }
+.package-summary-item span img { width: 18px; height: 18px; }
+.package-summary-item.detailed span i img { width: 18px; height: 18px; }
+@media (max-width: 720px) {
+  .service-icon-large img { width: 50px; height: 50px; }
+}

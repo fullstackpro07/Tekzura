@@ -31,6 +31,17 @@ export const serviceImages: Record<ServiceSlug, string> = {
   'customer-support': '/Custom Support.jpg',
 };
 
+export const serviceIconImages: Record<ServiceSlug, string> = {
+  'full-stack-dev': '/calderforge-service-icons/full-stack-dev-icon.png',
+  'wordpress': '/calderforge-service-icons/wordpress-dev-icon.png',
+  'shopify': '/calderforge-service-icons/shopify-dev-icon.png',
+  'digital-marketing': '/calderforge-service-icons/digital-marketing-icon.png',
+  'youtube-automation': '/calderforge-service-icons/youtube-automation-icon.png',
+  'marketing-automation': '/calderforge-service-icons/marketing-automation-icon.png',
+  'graphic-design': '/calderforge-service-icons/graphic-design-icon.png',
+  'customer-support': '/calderforge-service-icons/customer-support-icon.png',
+};
+
 export function publicAsset(path: string) {
   return encodeURI(path);
 }
@@ -44,6 +55,7 @@ export interface Service {
   problem: string;
   outcome: string;
   icon: LucideIcon;
+  iconImage: string;
   image: string;
   imageAlt: string;
   deliverables: string[];
@@ -141,6 +153,7 @@ export const services: Service[] = [
     outcome:
       'One accountable team ships a cohesive product — from interface to API to deployment — with architecture built for growth.',
     icon: Braces,
+    iconImage: serviceIconImages['full-stack-dev'],
     image: publicAsset(serviceImages['full-stack-dev']),
     imageAlt: 'Engineering team reviewing a full stack web application and API architecture',
     deliverables: ['Product & technical discovery', 'Frontend & backend development', 'API design & integrations', 'Database & cloud setup', 'Launch, monitoring & handover'],
@@ -162,6 +175,7 @@ export const services: Service[] = [
     outcome:
       'A tailored WordPress platform with disciplined plugins, strong performance, and an editing experience your team controls.',
     icon: Globe2,
+    iconImage: serviceIconImages.wordpress,
     image: publicAsset(serviceImages.wordpress),
     imageAlt: 'Development team reviewing a WordPress site and content management workflow',
     deliverables: ['Site architecture & wireframes', 'Custom theme development', 'Plugin integration & custom plugins', 'WooCommerce setup', 'Performance, security & SEO hardening'],
@@ -183,6 +197,7 @@ export const services: Service[] = [
     outcome:
       'A polished Shopify experience with clearer merchandising, faster load times, and integrations your operations team can trust.',
     icon: ShoppingBag,
+    iconImage: serviceIconImages.shopify,
     image: publicAsset(serviceImages.shopify),
     imageAlt: 'Shopify storefront displayed across desktop and mobile screens',
     deliverables: ['Store strategy & merchandising', 'Custom theme development', 'Shopify app integrations', 'Checkout & payment optimization', 'Speed & conversion improvements'],
@@ -204,6 +219,7 @@ export const services: Service[] = [
     outcome:
       'A coordinated growth program with clear channels, conversion focus, and reporting you can act on every week.',
     icon: Megaphone,
+    iconImage: serviceIconImages['digital-marketing'],
     image: publicAsset(serviceImages['digital-marketing']),
     imageAlt: 'Marketing team reviewing campaign performance across search, social, and paid channels',
     deliverables: ['SEO strategy & execution', 'Google & Meta ad campaigns', 'Social media management', 'Landing pages & funnel optimization', 'Analytics & monthly reporting'],
@@ -225,6 +241,7 @@ export const services: Service[] = [
     outcome:
       'A repeatable content engine that publishes on schedule, improves packaging, and compounds audience growth over time.',
     icon: Youtube,
+    iconImage: serviceIconImages['youtube-automation'],
     image: publicAsset(serviceImages['youtube-automation']),
     imageAlt: 'Content team reviewing YouTube channel analytics and video production workflow',
     deliverables: ['Channel strategy & content planning', 'Scriptwriting & research', 'Video editing & post-production', 'Thumbnail & title optimization', 'Upload, scheduling & analytics'],
@@ -246,6 +263,7 @@ export const services: Service[] = [
     outcome:
       'Connected systems that route leads, trigger follow-ups, and report on what converts without manual busywork.',
     icon: Workflow,
+    iconImage: serviceIconImages['marketing-automation'],
     image: publicAsset(serviceImages['marketing-automation']),
     imageAlt: 'Marketing automation dashboard showing CRM flows and funnel performance',
     deliverables: ['CRM setup & pipeline design', 'Email & nurture sequences', 'Landing page & funnel wiring', 'Zapier / Make integrations', 'Tracking, tags & reporting'],
@@ -267,6 +285,7 @@ export const services: Service[] = [
     outcome:
       'A cohesive visual identity and ready-to-use assets your team can deploy across web, social, ads, and presentations.',
     icon: Palette,
+    iconImage: serviceIconImages['graphic-design'],
     image: publicAsset(serviceImages['graphic-design']),
     imageAlt: 'Designer presenting brand identity concepts and social content templates',
     deliverables: ['Logo & brand identity', 'Brand guidelines & color systems', 'Social media templates', 'Ad creatives & landing visuals', 'UI/UX design support'],
@@ -288,6 +307,7 @@ export const services: Service[] = [
     outcome:
       'Structured support operations with trained coverage, clear escalation paths, and tools that keep response times under control.',
     icon: Headset,
+    iconImage: serviceIconImages['customer-support'],
     image: publicAsset(serviceImages['customer-support']),
     imageAlt: 'Customer support team managing live chat and helpdesk tickets',
     deliverables: ['Live chat & inbox setup', 'VA / support team staffing', 'Helpdesk & ticket workflows', 'Chatbot & FAQ automation', 'SLA tracking & quality reviews'],

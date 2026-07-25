@@ -118,10 +118,9 @@ function PackageSummary({
     <>
       {quote.items.map((item) => {
         const meta = services.find((service) => service.slug === item.slug);
-        const Icon = meta?.icon;
         return (
           <div key={item.slug} className="package-summary-item">
-            <span>{Icon ? <Icon aria-hidden="true" /> : null}{item.shortTitle}</span>
+            <span>{meta ? <img src={meta.iconImage} alt="" /> : null}{item.shortTitle}</span>
             <strong>{item.priceLabel.replace('From ', '')}</strong>
           </div>
         );
@@ -163,7 +162,6 @@ function ServiceRow({
 }) {
   const meta = services.find((service) => service.slug === item.slug);
   const category = packageCategories.find((entry) => entry.id === item.categoryId);
-  const Icon = meta?.icon;
 
   return (
     <button
@@ -174,7 +172,7 @@ function ServiceRow({
     >
       <span className="package-service-check" aria-hidden="true">{selected ? <Check /> : null}</span>
       <span className="package-service-icon" style={{ background: category?.iconBg, color: category?.iconColor }}>
-        {Icon ? <Icon aria-hidden="true" /> : null}
+        {meta ? <img src={meta.iconImage} alt="" /> : null}
       </span>
       <span className="package-service-copy">
         <strong>
@@ -543,12 +541,11 @@ export default function PackageBuilder({ initialSelection = [] }: PackageBuilder
               <div className="package-quote-card-body">
                 {quote.items.map((item) => {
                   const meta = services.find((service) => service.slug === item.slug);
-                  const Icon = meta?.icon;
                   const category = packageCategories.find((entry) => entry.id === item.categoryId);
                   return (
                     <div key={item.slug} className="package-summary-item detailed">
                       <span>
-                        <i style={{ background: category?.iconBg, color: category?.iconColor }}>{Icon ? <Icon aria-hidden="true" /> : null}</i>
+                        <i style={{ background: category?.iconBg, color: category?.iconColor }}>{meta ? <img src={meta.iconImage} alt="" /> : null}</i>
                         {item.shortTitle}
                       </span>
                       <strong>{item.priceLabel.replace('From ', '')}</strong>
