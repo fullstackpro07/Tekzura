@@ -503,6 +503,10 @@ p { color: var(--text); line-height: 1.72; }
 .tag-row span { padding: 5px 9px; color: #344054; background: var(--soft); border: 1px solid var(--border); border-radius: 6px; font-size: 0.72rem; font-weight: 600; }
 .tag-row.large span { padding: 8px 12px; font-size: 0.82rem; }
 
+.reviews-section .section-heading { margin-inline: auto; }
+.reviews-widget { width: 100%; max-width: 100%; overflow-x: auto; }
+.reviews-widget :is(iframe, img, video) { max-width: 100%; }
+
 .facebook-feed-section .section-heading { margin-inline: auto; }
 .facebook-feed-widget { width: 100%; max-width: 100%; overflow-x: auto; }
 .facebook-feed-widget :is(iframe, img, video) { max-width: 100%; }

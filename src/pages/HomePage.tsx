@@ -14,6 +14,7 @@ import TrustSection from '../components/site/TrustSection';
 import ProductStudioFramework from '../components/site/ProductStudioFramework';
 import InvestorSection from '../components/site/InvestorSection';
 import FacebookFeedWidget from '../components/site/FacebookFeedWidget';
+import TrustindexReviewsWidget from '../components/site/TrustindexReviewsWidget';
 
 export default function HomePage() {
   return (
@@ -116,6 +117,8 @@ export default function HomePage() {
           <TestimonialsCarousel items={testimonials} />
         </div>
       </section>
+
+      <TrustindexReviewsWidget />
 
       <FacebookFeedWidget />
 
