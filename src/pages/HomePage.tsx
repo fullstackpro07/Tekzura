@@ -13,6 +13,7 @@ import TechStack from '../components/site/TechStack';
 import TrustSection from '../components/site/TrustSection';
 import ProductStudioFramework from '../components/site/ProductStudioFramework';
 import InvestorSection from '../components/site/InvestorSection';
+import FacebookFeedWidget from '../components/site/FacebookFeedWidget';
 
 export default function HomePage() {
   return (
@@ -115,6 +116,8 @@ export default function HomePage() {
           <TestimonialsCarousel items={testimonials} />
         </div>
       </section>
+
+      <FacebookFeedWidget />
 
       <CommonQuestions />
 

@@ -503,6 +503,16 @@ p { color: var(--text); line-height: 1.72; }
 .tag-row span { padding: 5px 9px; color: #344054; background: var(--soft); border: 1px solid var(--border); border-radius: 6px; font-size: 0.72rem; font-weight: 600; }
 .tag-row.large span { padding: 8px 12px; font-size: 0.82rem; }
 
+.facebook-feed-section .section-heading { margin-inline: auto; }
+.facebook-feed-widget { width: 100%; max-width: 100%; overflow-x: auto; }
+.facebook-feed-widget :is(iframe, img, video) { max-width: 100%; }
+.facebook-feed-pagination { display: flex; align-items: center; justify-content: center; gap: 18px; margin-top: 32px; }
+.facebook-feed-pagination span { color: var(--ink); font-size: .8rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+.facebook-feed-pagination button { display: grid; width: 44px; height: 44px; place-items: center; color: var(--ink); border: 1px solid var(--border); border-radius: 50%; background: #fff; cursor: pointer; transition: color 180ms ease, background-color 180ms ease, border-color 180ms ease, transform 180ms ease; }
+.facebook-feed-pagination button:hover:not(:disabled) { color: #fff; background: var(--blue); border-color: var(--blue); transform: translateY(-2px); }
+.facebook-feed-pagination button:disabled { color: #b7c0cd; background: var(--soft); cursor: not-allowed; }
+.facebook-feed-pagination svg { width: 18px; }
+
 .testimonial-section { position: relative; overflow: hidden; background: linear-gradient(145deg, #08111f 0%, #0c1b30 58%, #08111f 100%); }
 .testimonial-section::before, .testimonial-section::after { position: absolute; content: ""; border-radius: 50%; pointer-events: none; filter: blur(2px); }
 .testimonial-section::before { top: -260px; right: -180px; width: 620px; height: 620px; background: radial-gradient(circle, rgba(21,94,239,.19), transparent 68%); }
