@@ -118,9 +118,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <TrustindexReviewsWidget />
-
-      <FacebookFeedWidget />
+      
 
       <CommonQuestions />
 

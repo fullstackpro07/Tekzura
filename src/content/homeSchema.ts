@@ -26,7 +26,7 @@ export const homeFaqs = [
 export const homePageTitle = 'calderforge |  Where strategy meets execution & ideas become assets.';
 export const homePageDescription =
   'calderforge is a full-stack development and AI growth studio building websites, apps, automation, and marketing systems that turn ideas into scalable products.';
-export const homePageH1 = 'Where strategy meets execution — and ideas become assets.';
+export const homePageH1 = 'Where strategy meets execution and ideas become assets.';
 
 export function buildHomeSchema() {
   const organizationId = `${siteConfig.url}/#organization`;
