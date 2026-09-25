@@ -514,13 +514,7 @@ export const team: TeamMember[] = [
     group: 'Engineering & Product',
     gender: 'male',
   },
-  {
-    name: 'Humaira Malik',
-    role: 'Digital Marketer',
-    bio: 'Works across digital marketing, SEO, and digital media, with experience managing marketing work at Hello World Technologies.',
-    group: 'Growth & Creative',
-    gender: 'female',
-  },
+
   {
     name: 'Lubaba Muaaz',
     role: 'Digital Marketing',
