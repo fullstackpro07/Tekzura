@@ -77,7 +77,7 @@ const whyChoosecalderforge = [
   {
     icon: Globe2,
     title: 'Global Remote Delivery',
-    text: 'Based in Bahawalpur, structured for remote clients with clear communication and documented decisions.',
+    text: 'Based in Dallas and Bahawalpur, structured for remote clients with clear communication and documented decisions.',
   },
   {
     icon: Clock3,
@@ -105,7 +105,7 @@ export default function AboutPage() {
     <>
       <Seo
         title="About"
-        description="Learn about calderforge, a Bahawalpur-based product development and growth studio helping clients build digital products, automation workflows, and growth systems."
+        description="Learn about calderforge, a Dallas and Bahawalpur-based product development and growth studio helping clients build digital products, automation workflows, and growth systems."
         path="/about"
       />
       <section className="about-hero" aria-labelledby="about-hero-title">

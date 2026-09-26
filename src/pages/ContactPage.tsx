@@ -56,7 +56,7 @@ export default function ContactPage() {
             <div className="contact-list">
               <a href={`mailto:${siteConfig.email}`}><Mail aria-hidden="true" /><span><strong>Email</strong>{siteConfig.email}</span></a>
               <a href={`tel:${siteConfig.phoneHref}`}><Phone aria-hidden="true" /><span><strong>Phone</strong>{siteConfig.phone}</span></a>
-              <div><MapPin aria-hidden="true" /><span><strong>Office</strong>{siteConfig.address}</span></div>
+              <div><MapPin aria-hidden="true" /><span><strong>Locations</strong>{siteConfig.locations.map((location) => (<span key={location.label} style={{ display: 'block' }}>{location.label}</span>))}</span></div>
               <div><Clock3 aria-hidden="true" /><span><strong>Business Hours</strong>Monday–Friday, 9:00 AM–6:00 PM PKT</span></div>
             </div>
           </div>

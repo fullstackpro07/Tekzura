@@ -282,7 +282,9 @@ export default function SiteShell() {
             <h2>Contact</h2>
             <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
             <a href={`tel:${siteConfig.phoneHref}`}>{siteConfig.phone}</a>
-            <span>{siteConfig.address}</span>
+            {siteConfig.locations.map((location) => (
+              <span key={location.label}>📍 {location.label}</span>
+            ))}
             <Link className="footer-action" to="/contact">Talk to sales <ArrowRight aria-hidden="true" /></Link>
           </div>
         </div>

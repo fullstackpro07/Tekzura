@@ -114,9 +114,13 @@ export const siteConfig = {
   name: 'calderforge',
   tagline: 'Product Development & Growth Studio',
   email: 'info@calderforge.com',
-  phone: '+92 326 9379244',
-  phoneHref: '+923269379244',
-  address: 'Bahawalpur, Pakistan',
+  phone: '+1 808 998 5302',
+  phoneHref: '+18089985302',
+  address: 'Dallas, Texas, USA · Bahawalpur, Punjab, Pakistan',
+  locations: [
+    { city: 'Dallas', region: 'Texas', country: 'USA', label: 'Dallas, Texas, USA', countryCode: 'US' },
+    { city: 'Bahawalpur', region: 'Punjab', country: 'Pakistan', label: 'Bahawalpur, Punjab, Pakistan', countryCode: 'PK' },
+  ],
   calendly: 'https://calendly.com/calderforge-info/30min',
   url: 'https://www.calderforge.com',
   description:

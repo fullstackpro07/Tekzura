@@ -43,11 +43,12 @@ export function buildHomeSchema() {
         email: siteConfig.email,
         telephone: siteConfig.phone,
         logo: `${siteConfig.url}/calderforge-logo.png`,
-        address: {
+        address: siteConfig.locations.map((location) => ({
           '@type': 'PostalAddress',
-          addressLocality: 'Bahawalpur',
-          addressCountry: 'PK',
-        },
+          addressLocality: location.city,
+          addressRegion: location.region,
+          addressCountry: location.countryCode,
+        })),
       },
       {
         '@type': 'WebSite',

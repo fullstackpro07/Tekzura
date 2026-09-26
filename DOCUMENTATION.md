@@ -42,8 +42,8 @@ Complete reference for the calderforge main marketing website: architecture, con
 | **Design origin** | [Figma — Premium Digital Agency Website](https://www.figma.com/design/3GxfAXC5YzWZwh46HTXzn1/Premium-Digital-Agency-Website) |
 | **Primary CTA** | Book a strategy call via Calendly |
 | **Contact email** | info@calderforge.com |
-| **Phone** | +92 326 9379244 |
-| **Location** | Bahawalpur, Pakistan |
+| **Phone** | +1 808 998 5302 |
+| **Location** | Dallas, Texas, USA; Bahawalpur, Punjab, Pakistan |
 
 ### What the site does
 
@@ -715,9 +715,9 @@ Edit `siteConfig` in `src/content/site.ts`:
 export const siteConfig = {
   name: 'calderforge',
   email: 'info@calderforge.com',
-  phone: '+92 326 9379244',
-  phoneHref: '+923269379244',
-  address: 'Bahawalpur, Pakistan',
+  phone: '+1 808 998 5302',
+  phoneHref: '+18089985302',
+  address: 'Dallas, Texas, USA · Bahawalpur, Punjab, Pakistan',
   calendly: 'https://calendly.com/yasirmalik2182/new-meeting',
   description: '...',
 };
