@@ -5,6 +5,8 @@ import { Link, NavLink, Outlet, useLocation } from 'react-router-dom';
 import { PACKAGE_BUILDER_PATH } from '../../content/packageBuilder';
 import { services, siteConfig } from '../../content/site';
 import { industrySummaries } from '../../content/industries';
+import { legalLinks } from '../../content/legalLinks';
+import { openCookiePreferences } from '../../lib/consent';
 import Chatbot, { OPEN_CHAT_EVENT } from './Chatbot';
 import ContactFab from './ContactFab';
 import IndustriesDropdown from './IndustriesDropdown';
@@ -290,7 +292,12 @@ export default function SiteShell() {
         </div>
         <div className="container footer-bottom">
           <span>© {new Date().getFullYear()} calderforge. All rights reserved.</span>
-          <span>Digital solutions built with clarity.</span>
+          <nav className="footer-legal" aria-label="Legal">
+            {legalLinks.map((doc) => (
+              <Link key={doc.slug} to={`/${doc.slug}`}>{doc.title}</Link>
+            ))}
+            <button type="button" onClick={openCookiePreferences}>Cookie settings</button>
+          </nav>
         </div>
       </footer>
 

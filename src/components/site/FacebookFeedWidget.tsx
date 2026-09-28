@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { useConsent } from '../../lib/consent';
+import ConsentPlaceholder from './ConsentPlaceholder';
 import { SectionHeading } from './PageElements';
 
 const TRUSTINDEX_SRC = 'https://cdn.trustindex.io/loader-feed.js?c60deed77fee753a8686777d4b8';
@@ -8,12 +10,13 @@ const POSTS_PER_PAGE = 4;
 
 export default function FacebookFeedWidget() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const allowed = useConsent('functional');
   const [page, setPage] = useState(0);
   const [pageCount, setPageCount] = useState(1);
 
   useEffect(() => {
     const container = containerRef.current;
-    if (!container || container.querySelector(`#${TRUSTINDEX_SCRIPT_ID}`)) return;
+    if (!allowed || !container || container.querySelector(`#${TRUSTINDEX_SCRIPT_ID}`)) return;
 
     const script = document.createElement('script');
     script.id = TRUSTINDEX_SCRIPT_ID;
@@ -21,7 +24,7 @@ export default function FacebookFeedWidget() {
     script.defer = true;
     script.async = true;
     container.appendChild(script);
-  }, []);
+  }, [allowed]);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -36,7 +39,7 @@ export default function FacebookFeedWidget() {
     const observer = new MutationObserver(updatePageCount);
     observer.observe(container, { childList: true, subtree: true });
     return () => observer.disconnect();
-  }, []);
+  }, [allowed]);
 
   useEffect(() => {
     setPage((current) => Math.min(current, pageCount - 1));
@@ -60,7 +63,7 @@ export default function FacebookFeedWidget() {
           description="Real-time posts and highlights straight from the calderforge Facebook page."
           align="center"
         />
-        <div className="facebook-feed-widget" ref={containerRef} />
+        {allowed ? <div className="facebook-feed-widget" ref={containerRef} /> : <ConsentPlaceholder label="Our Facebook feed" />}
         {pageCount > 1 && (
           <div className="facebook-feed-pagination">
             <button

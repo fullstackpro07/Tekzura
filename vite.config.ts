@@ -4,6 +4,7 @@ import { defineConfig, loadEnv, type PluginOption } from 'vite';
 import react from '@vitejs/plugin-react-swc';
 import { industrySummaries } from './src/content/industries';
 import { insightCaseStudies } from './src/content/insights';
+import { legalLinks } from './src/content/legalLinks';
 import { services, siteConfig } from './src/content/site';
 import { DEFAULT_MODEL, generateChatReply, sanitizeContext, sanitizeMessages } from './api/lib/gemini';
 import { sanitizeContactFields, sanitizeSource, sendContactEmail } from './api/lib/mailer';
@@ -113,6 +114,7 @@ function sitemapPlugin(): PluginOption {
         ...services.map((service) => `/services/${service.slug}`),
         ...industrySummaries.map((industry) => `/industries/${industry.id}`),
         ...insightCaseStudies.map((study) => `/blog/${study.slug}`),
+        ...legalLinks.map((doc) => `/${doc.slug}`),
       ];
       const uniquePaths = [...new Set(paths)];
       const lastmod = new Date().toISOString().slice(0, 10);
@@ -121,7 +123,7 @@ function sitemapPlugin(): PluginOption {
 ${uniquePaths
   .map((path) => {
     const loc = `${siteConfig.url}${path}`;
-    const priority = path === '/' ? '1.0' : path.startsWith('/services/') || path.startsWith('/blog/') || path.startsWith('/industries/') ? '0.8' : '0.9';
+    const priority = path === '/' ? '1.0' : legalLinks.some((doc) => path === `/${doc.slug}`) ? '0.3' : path.startsWith('/services/') || path.startsWith('/blog/') || path.startsWith('/industries/') ? '0.8' : '0.9';
     return `  <url><loc>${loc}</loc><lastmod>${lastmod}</lastmod><changefreq>weekly</changefreq><priority>${priority}</priority></url>`;
   })
   .join('\n')}

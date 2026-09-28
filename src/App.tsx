@@ -2,6 +2,7 @@ import { lazy, Suspense } from 'react';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import Analytics from './components/site/Analytics';
 import SiteShell from './components/site/SiteShell';
+import { legalLinks } from './content/legalLinks';
 
 const HomePage = lazy(() => import('./pages/HomePage'));
 const AboutPage = lazy(() => import('./pages/AboutPage'));
@@ -16,6 +17,7 @@ const CaseStudyDetailPage = lazy(() => import('./pages/CaseStudyDetailPage'));
 const ContactPage = lazy(() => import('./pages/ContactPage'));
 const GetStartedPage = lazy(() => import('./pages/GetStartedPage'));
 const ProcessPage = lazy(() => import('./pages/ProcessPage'));
+const LegalPage = lazy(() => import('./pages/LegalPage'));
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
 
 function PageLoader() {
@@ -56,6 +58,9 @@ export default function App() {
             <Route path="contact" element={<ContactPage />} />
             <Route path="process" element={<ProcessPage />} />
             <Route path="get-started" element={<GetStartedPage />} />
+            {legalLinks.map((doc) => (
+              <Route key={doc.slug} path={doc.slug} element={<LegalPage slug={doc.slug} />} />
+            ))}
             <Route path="home" element={<Navigate to="/" replace />} />
             <Route path="*" element={<NotFoundPage />} />
           </Route>
